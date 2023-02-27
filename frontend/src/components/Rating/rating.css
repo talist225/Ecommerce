@@ -1,0 +1,7 @@
+.rating i {
+  direction: rtl !important;
+}
+
+.rating span {
+  margin: 0.1rem;
+}

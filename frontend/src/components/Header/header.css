@@ -1,0 +1,65 @@
+.navbar {
+  background-color: #131921 !important;
+}
+
+.navbar .brand {
+  color: white;
+  font-size: 30px;
+}
+
+.navbar .menu-links {
+  font-size: 15px;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+.navbar .nav-drop-item {
+  color: black !important;
+}
+
+.cart {
+  width: 30%;
+}
+
+.header-bottom {
+  background-color: #232f3e;
+}
+
+.header-bottom div {
+  gap: 10rem;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+.header-bottom a {
+  color: white;
+  font-weight: 500;
+  transition: 0.1s ease-in-out;
+  text-decoration: none;
+}
+
+.header-bottom a:hover {
+  color: #febd69;
+}
+
+navbar-toggler {
+  color: white !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .cart {
+    width: 35%;
+  }
+
+  .header-bottom div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.1rem;
+  }
+}
