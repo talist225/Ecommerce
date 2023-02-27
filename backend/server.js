@@ -38,14 +38,9 @@ app.get("/api/config/paypal", (req, res) =>
 
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
-// app.get("*", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("API is running");
-//   });
-// }
+app.get("*", (req, res) =>
+  res.sendFile(path.resolve(__dirname, "backend", "build", "index.html"))
+);
 
 app.use(notFound);
 
