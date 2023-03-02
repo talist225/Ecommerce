@@ -11,6 +11,7 @@ import {
 } from "../../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../../constants/productConstants";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const ProductEditPage = ({ match, history }) => {
   const productId = match.params.id;
@@ -89,6 +90,7 @@ const ProductEditPage = ({ match, history }) => {
         countInStock,
       })
     );
+    toast.success("הפרטים עודכנו");
   };
 
   return (

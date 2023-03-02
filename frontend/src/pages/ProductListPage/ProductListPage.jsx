@@ -11,6 +11,7 @@ import {
   createProduct,
 } from "../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../constants/productConstants";
+import { toast } from "react-toastify";
 
 const ProductListPage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
@@ -63,6 +64,7 @@ const ProductListPage = ({ history, match }) => {
     if (window.confirm("האם אתה בטוח שברצונך למחוק מוצר זה?")) {
       dispatch(deleteProduct(id));
     }
+    toast.success("המוצר נמחק בהצלחה");
   };
 
   const createProductHandler = () => {

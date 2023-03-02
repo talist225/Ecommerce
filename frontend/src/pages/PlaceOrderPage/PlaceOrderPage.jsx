@@ -5,6 +5,8 @@ import Message from "../../components/Message/Message";
 import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../actions/orderActions";
+import "./placeOrder.css";
+import { toast } from "react-toastify";
 
 const PlaceOrderPage = ({ history }) => {
   const dispatch = useDispatch();
@@ -49,12 +51,13 @@ const PlaceOrderPage = ({ history }) => {
         totalPrice: cart.totalPrice,
       })
     );
+    toast.success("ההזמנה הוזנה במערכת בהצלחה");
   };
 
   return (
     <>
       <CheckoutSteps step1 step2 step3 step4 />
-      <Row>
+      <Row className="placeorder">
         <Col md={8}>
           <ListGroup variant="flush">
             <ListGroup.Item>
@@ -96,7 +99,7 @@ const PlaceOrderPage = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          x{item.qty} ₪{item.price} = ₪{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -108,37 +111,37 @@ const PlaceOrderPage = ({ history }) => {
         </Col>
 
         <Col md={4}>
-          <Card>
+          <Card className="mt-5">
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <h2>סיכום הזמנה</h2>
               </ListGroup.Item>
 
               <ListGroup.Item>
-                <Row>
+                <Row className="d-flex justify-content-between">
                   <Col>מוצרים</Col>
-                  <Col>${cart.itemsPrice}</Col>
+                  <Col>₪{cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>משלוח</Col>
-                  <Col>${cart.shippingPrice}</Col>
+                  <Col>₪{cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>מס</Col>
-                  <Col>${cart.taxPrice}</Col>
+                  <Col>₪{cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
 
               <ListGroup.Item>
                 <Row>
                   <Col>סה"כ</Col>
-                  <Col>${cart.totalPrice}</Col>
+                  <Col>₪{cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
 

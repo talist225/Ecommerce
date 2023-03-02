@@ -6,6 +6,7 @@ import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { login } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer/FormContainer";
+import { toast } from "react-toastify";
 
 const LoginPage = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -27,6 +28,11 @@ const LoginPage = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
+    if (dispatch.login === (email && password)) {
+      toast.success("התחברת בהצלחה");
+    } else {
+      toast.error("התחברות נכשלה");
+    }
   };
 
   return (

@@ -14,7 +14,9 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
           <Nav.Link disabled>התחברות</Nav.Link>
         )}
       </Nav.Item>
-
+      <span className="mt-2">
+        <i className="fa-solid fa-arrow-left"></i>
+      </span>
       <Nav.Item>
         {step2 ? (
           <LinkContainer to="/shipping">
@@ -24,7 +26,9 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
           <Nav.Link disabled>פרטי משלוח</Nav.Link>
         )}
       </Nav.Item>
-
+      <span className="mt-2">
+        <i className="fa-solid fa-arrow-left"></i>
+      </span>
       <Nav.Item>
         {step3 ? (
           <LinkContainer to="/payment">
@@ -34,7 +38,9 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
           <Nav.Link disabled>תשלום</Nav.Link>
         )}
       </Nav.Item>
-
+      <span className="mt-2">
+        <i className="fa-solid fa-arrow-left"></i>
+      </span>
       <Nav.Item>
         {step4 ? (
           <LinkContainer to="/placeorder">

@@ -18,10 +18,18 @@ import UserEditPage from "./pages/UserEditPage/UserEditPage";
 import ProductListPage from "./pages/ProductListPage/ProductListPage";
 import ProductEditPage from "./pages/ProductEditPage/ProductEditPage";
 import OrderListPage from "./pages/OrderListPage/OrderListPage";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <Router>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        closeOnClick
+        pauseOnHover={false}
+        theme="light"
+      />
       <Header />
       <main className="py-3">
         <Container>

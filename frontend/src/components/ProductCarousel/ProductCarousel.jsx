@@ -22,15 +22,17 @@ const ProductCarousel = () => {
   ) : error ? (
     <Message variant="danger">{error}</Message>
   ) : (
-    <Carousel pause="hover" className="bg-dark mt-4" controls={false}>
+    <Carousel fade pause="hover" className="mt-4">
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+            <Image src={product.image} alt={product.name} />
             <Carousel.Caption className="carousel-caption">
               <h4>{product.name}</h4>
-              <p>₪{product.price}</p>
+              <h5>₪{product.price}</h5>
             </Carousel.Caption>
+
+            <span aria-hidden="true" className="carousel-control-next-icon" />
           </Link>
         </Carousel.Item>
       ))}

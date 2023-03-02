@@ -26,22 +26,21 @@ const PaymentPage = ({ history }) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h2>אמצעי תשלום</h2>
-      <Form onSubmit={submitHandler}>
+      <h2 className="w-75">אמצעי תשלום</h2>
+      <Form onSubmit={submitHandler} className="w-75">
         <Form.Group>
           <Form.Label as="legend">בחר/י אמצעי תשלום</Form.Label>
 
           <Col>
             <Form.Check
               type="radio"
-              label="PayPal או כרטיס אשראי"
               id="PayPal"
               name="paymentMethod"
               value="PayPal"
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
-
+            <label className="ml-5">אשראי או PayPal</label>
             {/* 
             //! Another payment method in the future
             <Form.Check

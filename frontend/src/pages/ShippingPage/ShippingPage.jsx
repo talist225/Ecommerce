@@ -66,8 +66,12 @@ const ShippingPage = ({ history }) => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button type="submit" variant="primary" className="mt-4">
-          המשך לתשלום
+        <Button
+          type="submit"
+          variant="primary"
+          className="mt-4 w-100 d-flex justify-content-center"
+        >
+          לבחירת אמצעי תשלום
         </Button>
       </Form>
     </FormContainer>

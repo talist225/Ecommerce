@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import Message from "../../components/Message/Message";
 import { addToCart, removeFromCart } from "../../actions/cartActions";
+import "./cartPage.css";
 
 const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -53,12 +54,16 @@ const CartPage = ({ match, location, history }) => {
                   <Col md={3}>
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
-                  <Col md={2}>${item.price}</Col>
-                  <Col md={2}>
+                  <Col md={2}>₪{item.price}</Col>
+                  <Col
+                    md={4}
+                    className="d-flex  justify-content-center align-items-center mb-4 "
+                  >
                     {" "}
                     <Form.Control
                       as="select"
                       value={item.qty}
+                      className="qty-btn"
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
@@ -71,9 +76,8 @@ const CartPage = ({ match, location, history }) => {
                         </option>
                       ))}
                     </Form.Control>
-                  </Col>
-                  <Col md={2}>
                     <Button
+                      className="mr-5"
                       type="button"
                       variant="light"
                       onClick={() => removeFromCartHandler(item.product)}
@@ -87,18 +91,19 @@ const CartPage = ({ match, location, history }) => {
           </ListGroup>
         )}
       </Col>
-      <Col md={4}>
+      <Col md={4} className="overall">
         <Card>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h3 className="text-center">
-                סה"כ ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                מוצרים
+                סה"כ {cartItems.reduce((acc, item) => acc + item.qty, 0)} מוצרים
               </h3>
-              $
-              {cartItems
-                .reduce((acc, item) => acc + item.qty * item.price, 0)
-                .toFixed(2)}
+              <span className="overall-price">
+                ₪
+                {cartItems
+                  .reduce((acc, item) => acc + item.qty * item.price, 0)
+                  .toFixed(2)}
+              </span>
             </ListGroup.Item>
             <ListGroup.Item>
               <Button
