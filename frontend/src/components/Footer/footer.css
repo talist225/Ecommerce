@@ -1,0 +1,35 @@
+/*Footer CSS*/
+
+footer {
+  background-color: var(--fourth-color);
+  color: white;
+}
+
+footer:not(:first-child) {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+footer .input-group-text {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  * {
+    direction: rtl !important;
+  }
+
+  .newsletter {
+    gap: 15px;
+  }
+}

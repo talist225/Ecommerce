@@ -19,11 +19,23 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .qty-settings {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .qty-btn {
-    width: 35%;
+    width: 100px;
   }
 
   i {
     font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .list-group {
+    margin-bottom: 10rem !important;
   }
 }

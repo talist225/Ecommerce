@@ -1,0 +1,11 @@
+.privacy-wrapper {
+  background-color: var(--sixth-color);
+}
+
+.policy {
+  background-color: white;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+}

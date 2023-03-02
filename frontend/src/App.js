@@ -19,6 +19,11 @@ import ProductListPage from "./pages/ProductListPage/ProductListPage";
 import ProductEditPage from "./pages/ProductEditPage/ProductEditPage";
 import OrderListPage from "./pages/OrderListPage/OrderListPage";
 import { ToastContainer } from "react-toastify";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy/ShippingPolicy";
+import TermAndCon from "./pages/TermAndCon/TermAndCon";
+import ContactPage from "./pages/ContactPage/ContactPage";
 
 const App = () => {
   return (
@@ -40,8 +45,13 @@ const App = () => {
           <Route path="/login" component={LoginPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/register" component={RegisterPage} />
+          <Route path="/contact" component={ContactPage} />
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/cart/:id?" component={CartPage} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route path="/refund-policy" component={RefundPolicy} />
+          <Route path="/shipping-policy" component={ShippingPolicy} />
+          <Route path="/terms-conditions" component={TermAndCon} />
           <Route path="/admin/userlist" component={UserListPage} />
           <Route path="/admin/user/:id/edit" component={UserEditPage} />
           <Route path="/admin/productlist" component={ProductListPage} exact />
