@@ -24,6 +24,7 @@ import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
 import ShippingPolicy from "./pages/ShippingPolicy/ShippingPolicy";
 import TermAndCon from "./pages/TermAndCon/TermAndCon";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import StorePage from "./pages/StorePage/StorePage";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Container>
           <Route path="/order/:id" component={OrderPage} />
           <Route path="/shipping" component={ShippingPage} />
+          <Route path="/store" component={StorePage} />
           <Route path="/payment" component={PaymentPage} />
           <Route path="/placeorder" component={PlaceOrderPage} />
           <Route path="/login" component={LoginPage} />

@@ -1,3 +1,11 @@
+.sticky-nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0%;
+  z-index: 10;
+}
+
 .navbar {
   background-color: #131921 !important;
 }
@@ -33,10 +41,6 @@
   border-radius: 5% !important;
 }
 
-.cart {
-  width: 30%;
-}
-
 .header-bottom {
   background-color: #232f3e;
 }
@@ -62,6 +66,19 @@
 
 navbar-toggler {
   color: white !important;
+}
+
+.navbar-toggler-icon,
+.navbar-toggler {
+  background: var(--third-color);
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.navbar-toggler-icon:focus,
+.navbar-toggler:focus {
+  outline: none;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -43,7 +43,7 @@ const Footer = () => {
               <div>
                 <address className="text-white">
                   מעלה אדומים <br />
-                  רחוב כלשהו <br />
+                  רחוב X<br />
                 </address>
                 טלפון החנות:
                 <a
@@ -92,11 +92,11 @@ const Footer = () => {
             <div className="col-sm-4">
               <h4 className="text-white mb-4">משתמש</h4>
               <div className="footer-links d-flex flex-column">
-                <Link to="##" className="text-white py-2 mb-1">
-                  קצת עלינו
+                <Link to="/login" className="text-white py-2 mb-1">
+                  התחברות
                 </Link>
-                <Link to="##" className="text-white py-2 mb-1">
-                  שאלות ותשובות
+                <Link to="/store" className="text-white py-2 mb-1">
+                  חנות
                 </Link>
               </div>
             </div>

@@ -6,11 +6,10 @@ import Product from "../../components/Product/Product";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import Paginate from "../../components/Paginate/Paginate";
-import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
-import { listProducts } from "../../actions/productActions";
-import { Link } from "react-router-dom";
 
-const HomePage = ({ match }) => {
+import { listProducts } from "../../actions/productActions";
+
+const StorePage = ({ match }) => {
   const keyword = match.params.keyword;
 
   const pageNumber = match.params.pageNumber || 1;
@@ -27,14 +26,8 @@ const HomePage = ({ match }) => {
   return (
     <>
       <Meta />
-      {!keyword ? (
-        <ProductCarousel />
-      ) : (
-        <Link to="/" className="btn btn-light">
-          חזור
-        </Link>
-      )}
       <h1 className="mt-5 text-center">המוצרים שלנו</h1>
+      <span>יש להשתמש בשורת החיפוש כדי לסנן את הרשימה ולמצוא מוצר ספציפי</span>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -58,4 +51,4 @@ const HomePage = ({ match }) => {
     </>
   );
 };
-export default HomePage;
+export default StorePage;
