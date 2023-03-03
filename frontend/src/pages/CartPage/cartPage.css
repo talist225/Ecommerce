@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+.overall .card {
+  height: 50vh;
+}
+
 @media only screen and (max-width: 1024px) {
   .qty-settings {
     margin-top: 10px;

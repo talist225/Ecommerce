@@ -6,7 +6,7 @@ import "./product.css";
 
 const Product = ({ product, match, history }) => {
   return (
-    <Card className="my-3 p-3 rounded text-center">
+    <Card className="my-3 p-3 rounded text-center product-card">
       <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant="top" />
       </Link>
