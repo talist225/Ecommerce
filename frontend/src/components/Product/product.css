@@ -1,8 +1,16 @@
 .card {
   box-shadow: rgba(136, 136, 151, 0.2) 0px 7px 29px 0px;
-  height: 50vh;
+  height: 90%;
+  object-fit: contain;
+  row-gap: 3rem !important;
 }
 
 .card span {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    object-fit: contain;
+  }
 }

@@ -9,6 +9,7 @@ import Paginate from "../../components/Paginate/Paginate";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import { listProducts } from "../../actions/productActions";
 import { Link } from "react-router-dom";
+import MarqueeSlide from "../../components/Marquee/MarqueeSlide";
 
 const HomePage = ({ match }) => {
   const keyword = match.params.keyword;
@@ -34,6 +35,7 @@ const HomePage = ({ match }) => {
           חזור
         </Link>
       )}
+
       <h1 className="mt-5 text-center">המוצרים שלנו</h1>
       {loading ? (
         <Loader />
@@ -55,6 +57,7 @@ const HomePage = ({ match }) => {
           />
         </>
       )}
+      <MarqueeSlide />
     </>
   );
 };

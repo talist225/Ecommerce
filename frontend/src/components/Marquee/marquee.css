@@ -1,0 +1,7 @@
+.marquee {
+  width: 100%;
+}
+
+.marquee div img {
+  width: 50%;
+}
