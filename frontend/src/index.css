@@ -45,3 +45,16 @@ a {
 main {
   min-height: 80vh;
 }
+
+.navbar-toggler-icon,
+.navbar-toggler {
+  background: var(--third-color);
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.navbar-toggler-icon:focus,
+.navbar-toggler:focus {
+  outline: none;
+}

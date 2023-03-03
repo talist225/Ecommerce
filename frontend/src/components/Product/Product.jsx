@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import Rating from "../Rating/Rating";
 
-const Product = ({ product }) => {
+const Product = ({ product, match, history }) => {
   return (
     <Card className="my-3 p-3 rounded">
       <Link to={`/product/${product._id}`}>

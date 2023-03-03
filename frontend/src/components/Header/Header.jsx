@@ -86,7 +86,7 @@ const Header = () => {
                 )}
                 <LinkContainer to="/cart">
                   <Nav.Link className="menu-links">
-                    עגלה <img src="images/cart.svg" alt="" className="cart" />
+                    עגלת קניות <i className="fa-solid fa-bag-shopping"></i>
                   </Nav.Link>
                 </LinkContainer>
               </Nav>

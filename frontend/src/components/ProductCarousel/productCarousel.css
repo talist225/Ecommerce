@@ -48,6 +48,10 @@
   transition: 0.1s ease-in-out;
 }
 
+.carousel button:focus {
+  outline: none;
+}
+
 .carousel button:hover {
   background-color: rgb(91, 90, 90);
 }

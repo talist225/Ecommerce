@@ -8,7 +8,12 @@
 }
 
 .navbar .menu-links {
-  font-size: 15px;
+  font-size: 12px;
+}
+
+.navbar .nav-link i {
+  color: var(--third-color);
+  font-size: 18px;
 }
 
 .navbar a {
@@ -17,6 +22,15 @@
 
 .navbar .nav-drop-item {
   color: black !important;
+  font-weight: 500;
+}
+
+.dropdown-item.active {
+  background-color: var(--third-color) !important;
+}
+
+.dropdown-menu {
+  border-radius: 5% !important;
 }
 
 .cart {

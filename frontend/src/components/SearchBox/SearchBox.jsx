@@ -15,18 +15,20 @@ const SearchBox = ({ history }) => {
   };
 
   return (
-    <Form onSubmit={submitHandler} className="d-flex search-box">
-      <Form.Control
-        type="text"
-        name="q"
-        onChange={(e) => setKeyword(e.target.value)}
-        placeholder="חיפוש מוצרים..."
-        className="mr-sm-2 ml-sm-5 py-4"
-      ></Form.Control>
-      <button type="submit" className="search-icon">
-        <i className="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </Form>
+    <div className="search-bar">
+      <Form onSubmit={submitHandler} className="d-flex search-box">
+        <Form.Control
+          type="text"
+          name="q"
+          onChange={(e) => setKeyword(e.target.value)}
+          placeholder="חיפוש מוצרים..."
+          className="py-4"
+        ></Form.Control>
+        <button type="submit" className="search-icon">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </Form>
+    </div>
   );
 };
 
