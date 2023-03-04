@@ -12,6 +12,8 @@ const Header = () => {
   const { userInfo } = userLogin;
 
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -88,6 +90,15 @@ const Header = () => {
                   <LinkContainer to="/cart">
                     <Nav.Link className="menu-links">
                       עגלת קניות <i className="fa-solid fa-bag-shopping"></i>
+                      <span className="cart-count">
+                        {cartItems.length === 0 ? (
+                          <span>0</span>
+                        ) : (
+                          <span>
+                            {cartItems.reduce((acc, item) => acc + item.qty, 0)}
+                          </span>
+                        )}
+                      </span>
                     </Nav.Link>
                   </LinkContainer>
                 </Nav>

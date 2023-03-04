@@ -10,7 +10,6 @@ import {
   Button,
   Card,
 } from "react-bootstrap";
-import Message from "../../components/Message/Message";
 import { addToCart, removeFromCart } from "../../actions/cartActions";
 import "./cartPage.css";
 
@@ -40,9 +39,10 @@ const CartPage = ({ match, location, history }) => {
       <Col md={8}>
         <h1 className="cart-title text-center">עגלת מוצרים</h1>
         {cartItems.length === 0 ? (
-          <Message>
-            עגלת הקניות שלך ריקה <Link to="/">למעבר לחנות</Link>
-          </Message>
+          <span className="cart-is-empty mt-5">
+            עגלת הקניות ריקה, &nbsp;
+            <Link to="/store">למעבר לחנות לחץ/י כאן</Link>
+          </span>
         ) : (
           <ListGroup variant="flush">
             {cartItems.map((item) => (
@@ -65,6 +65,7 @@ const CartPage = ({ match, location, history }) => {
                           addToCart(item.product, Number(e.target.value))
                         )
                       }
+                      className="qty-btn"
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -78,6 +79,7 @@ const CartPage = ({ match, location, history }) => {
                       type="button"
                       variant="light"
                       onClick={() => removeFromCartHandler(item.product)}
+                      className="remove-from-cart-btn"
                     >
                       <i className="fas fa-trash"></i>
                     </Button>
