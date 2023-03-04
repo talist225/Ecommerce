@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import { login } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer/FormContainer";
 import { toast } from "react-toastify";
+import "./loginPage.css";
 
 const LoginPage = ({ location, history }) => {
   const [email, setEmail] = useState("");
