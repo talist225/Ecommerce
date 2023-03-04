@@ -4,7 +4,7 @@ import "./privacyPolicy.css";
 const PrivacyPolicy = () => {
   return (
     <>
-      <section className="privacy-wrapper py-5">
+      <section className="privacy-wrapper py-5 mt-5">
         <div className="container">
           <div className="row">
             <div className="col-12">

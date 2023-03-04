@@ -1,0 +1,9 @@
+@media only screen and (max-width: 1024px) {
+  .all-products-title {
+    margin-top: 8rem !important;
+  }
+
+  .new-product-btn {
+    margin-top: 8rem;
+  }
+}

@@ -1,0 +1,10 @@
+.login-title {
+  margin-top: 8rem !important;
+}
+
+.login-btn {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}

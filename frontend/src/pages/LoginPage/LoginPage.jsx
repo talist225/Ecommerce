@@ -37,11 +37,11 @@ const LoginPage = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>התחברות</h1>
+      <h1 className="login-title text-center">התחברות</h1>
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId="email">
+        <Form.Group controlId="email" className="text-center mt-5">
           <Form.Label>אימייל</Form.Label>
           <Form.Control
             type="email"
@@ -50,7 +50,7 @@ const LoginPage = ({ location, history }) => {
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Form.Group controlId="password">
+        <Form.Group controlId="password" className="text-center mt-3">
           <Form.Label>סיסמא</Form.Label>
           <Form.Control
             type="password"
@@ -59,13 +59,17 @@ const LoginPage = ({ location, history }) => {
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button type="submit" variant="primary" className="mt-4">
+        <Button
+          type="submit"
+          variant="primary"
+          className="mt-4 login-btn m-0 w-100"
+        >
           התחברות
         </Button>
       </Form>
 
       <Row className="py-3">
-        <Col>
+        <Col className="text-center">
           <Link to={redirect ? `/register?redirect=${redirect}` : `/register`}>
             יצירת חשבון חדש
           </Link>

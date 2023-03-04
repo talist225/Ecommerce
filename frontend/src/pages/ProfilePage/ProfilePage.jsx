@@ -7,6 +7,7 @@ import { getUserDetails, updateUserProfile } from "../../actions/userActions";
 import { listMyOrders } from "../../actions/orderActions";
 import { LinkContainer } from "react-router-bootstrap";
 import { USER_UPDATE_PROFILE_RESET } from "../../constants/userConstants";
+import "./profilePage.css";
 
 const ProfilePage = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -56,7 +57,7 @@ const ProfilePage = ({ location, history }) => {
   return (
     <Row>
       <Col md={3}>
-        <h2>הפרופיל שלי</h2>
+        <h2 className="profile-title">הפרופיל שלי</h2>
         {message && <Message variant="danger">{message}</Message>}
         {error && <Message variant="danger">{error}</Message>}
         {success && <Message variant="success">הפרופיל עודכן בהצלחה</Message>}
@@ -102,19 +103,23 @@ const ProfilePage = ({ location, history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary" className="mt-4">
+          <Button
+            type="submit"
+            variant="primary"
+            className="mt-4 w-100 update-profile-btn"
+          >
             עדכון
           </Button>
         </Form>
       </Col>
       <Col md={9}>
-        <h2>ההזמנות שלי</h2>
+        <h2 className="my-orders">ההזמנות שלי</h2>
         {loadingOrders ? (
           <Loader />
         ) : errorOrders ? (
           <Message variant="danger">{errorOrders}</Message>
         ) : (
-          <Table striped bordered hover responsive className="table-sm">
+          <Table striped bordered hover responsive className="table-sm mt-4">
             <thead>
               <tr>
                 <th>מספר מזהה הזמנה</th>

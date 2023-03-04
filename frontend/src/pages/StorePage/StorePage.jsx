@@ -6,8 +6,8 @@ import Product from "../../components/Product/Product";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import Paginate from "../../components/Paginate/Paginate";
-
 import { listProducts } from "../../actions/productActions";
+import "./storePage.css";
 
 const StorePage = ({ match }) => {
   const keyword = match.params.keyword;
@@ -26,8 +26,10 @@ const StorePage = ({ match }) => {
   return (
     <>
       <Meta />
-      <h1 className="mt-5 text-center">המוצרים שלנו</h1>
-      <span>יש להשתמש בשורת החיפוש כדי לסנן את הרשימה ולמצוא מוצר ספציפי</span>
+      <h1 className="mt-5 text-center shop-title">המוצרים שלנו</h1>
+      <span className="store-info">
+        יש להשתמש בשורת החיפוש כדי לסנן את הרשימה ולמצוא מוצר ספציפי
+      </span>
       {loading ? (
         <Loader />
       ) : error ? (

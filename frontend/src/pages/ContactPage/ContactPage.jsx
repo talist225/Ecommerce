@@ -1,17 +1,12 @@
 import React from "react";
 import "./contactPage.css";
-import FormContainer from "../../components/FormContainer/FormContainer";
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
 
 const ContactPage = () => {
   return (
     <>
-      <h1 className="text-center">צרו קשר</h1>
+      <h1 className="text-center contact-title">צרו קשר</h1>
       <div className="col-sm-12">
-        <div className="contact-title text-center mt-5">
-          זמינים באמצעי המדיה הבאים:
-        </div>
+        <div className="text-center mt-5">זמינים באמצעי המדיה הבאים:</div>
         <div className="contact-icons d-flex align-items-center justify-content-center gap-30 mt-5">
           <a href="http://wa.me/972543034877">
             <i className="fa-brands fa-whatsapp"></i>

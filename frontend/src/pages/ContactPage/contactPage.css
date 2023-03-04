@@ -4,11 +4,6 @@
   transition: 0.1s ease-in-out;
 }
 
-.contact-title {
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .contact-icons a:nth-child(1):hover {
   color: rgb(5, 206, 5);
   transform: scale(1.2);
@@ -31,5 +26,15 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 10px;
+  }
+
+  .contact-title {
+    margin-top: 8rem !important;
+  }
+
+  .contact-icons a i {
+    color: var(--secondary-color);
+    font-size: 3.5rem !important;
+    transition: 0.1s ease-in-out;
   }
 }

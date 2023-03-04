@@ -4,8 +4,8 @@ import "./refundPolicy.css";
 const RefundPolicy = () => {
   return (
     <>
-      <section className="refund-wrapper py-5">
-        <div className="container">
+      <section className="refund-wrapper py-5 mt-5">
+        <div className="container ">
           <div className="row">
             <div className="col-12">
               <div className="policy">

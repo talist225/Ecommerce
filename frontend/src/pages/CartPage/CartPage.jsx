@@ -38,7 +38,7 @@ const CartPage = ({ match, location, history }) => {
   return (
     <Row>
       <Col md={8}>
-        <h1>עגלת מוצרים</h1>
+        <h1 className="cart-title text-center">עגלת מוצרים</h1>
         {cartItems.length === 0 ? (
           <Message>
             עגלת הקניות שלך ריקה <Link to="/">למעבר לחנות</Link>

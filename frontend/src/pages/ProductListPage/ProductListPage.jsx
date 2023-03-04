@@ -12,6 +12,7 @@ import {
 } from "../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../constants/productConstants";
 import { toast } from "react-toastify";
+import "./productListPage.css";
 
 const ProductListPage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
@@ -74,8 +75,8 @@ const ProductListPage = ({ history, match }) => {
   return (
     <>
       <Row className="align-items-center">
-        <Col>מוצרים</Col>
-        <Col className="text-right">
+        <h1 className="all-products-title text-center">מוצרים</h1>
+        <Col className="text-left new-product-btn">
           <Button className="my-3" onClick={createProductHandler}>
             יצירת מוצר חדש <i className="fas fa-plus"></i>
           </Button>

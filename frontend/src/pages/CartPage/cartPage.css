@@ -19,7 +19,7 @@
 }
 
 .overall .card {
-  height: 50vh;
+  height: 30vh !important;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -35,6 +35,10 @@
 
   i {
     font-size: 1.1rem;
+  }
+
+  .cart-title {
+    margin-top: 8rem !important;
   }
 }
 

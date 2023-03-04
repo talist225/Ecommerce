@@ -1,0 +1,5 @@
+@media only screen and (max-width: 1024px) {
+  .user-list-title {
+    margin-top: 8rem !important;
+  }
+}

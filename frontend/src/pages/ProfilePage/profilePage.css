@@ -1,0 +1,23 @@
+.update-profile-btn {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .my-orders,
+  .profile-title {
+    margin-top: 8rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .my-orders {
+    margin-top: 4rem !important;
+  }
+
+  table {
+    margin-bottom: 4rem !important;
+  }
+}

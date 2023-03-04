@@ -19,6 +19,7 @@ import {
 } from "../../actions/productActions";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../../constants/productConstants";
 import Meta from "../../components/Meta/Meta";
+import "./productPage.css";
 
 const ProductPage = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -94,7 +95,7 @@ const ProductPage = ({ history, match }) => {
               </ListGroup>
             </Col>
             <Col md={3}>
-              <Card>
+              <Card className="left-card">
                 <ListGroup variant="flush">
                   <ListGroup.Item>
                     <Row>
