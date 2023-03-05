@@ -37,15 +37,15 @@ const LoginPage = ({ location, history }) => {
         switch (errorItem.type) {
           case "string.min":
             if (errorItem.context.label === "Password")
-              errorMsgs += `סיסמא חייבת להכיל מינימום 6 תווים`;
+              errorMsgs += `סיסמא חייבת להכיל לפחות 8 תווים`;
             if (errorItem.context.label === "Email")
-              errorMsgs += `אימייל חייב להכיל מינימום 6 תווים`;
+              errorMsgs += `אימייל חייב להכיל לפחות 6 תווים`;
             break;
           case "string.max":
             if (errorItem.context.label === "Password")
-              errorMsgs += `סיסמא חייבת להכיל מינימום 20 תווים`;
+              errorMsgs += `סיסמא חייבת להכיל 20 תווים לכל היותר`;
             if (errorItem.context.label === "Email")
-              errorMsgs += `אימייל חייב להכיל מינימום 100 תווים`;
+              errorMsgs += `אימייל חייב להכיל 100 תווים לכל היותר`;
             break;
           default:
             errorMsgs += "משהו השתבש";

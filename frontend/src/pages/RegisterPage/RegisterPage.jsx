@@ -42,7 +42,7 @@ const RegisterPage = ({ location, history }) => {
             if (errorItem.context.label === "Name")
               errorMsgs += `שם חייב להכיל לפחות 2 תווים`;
             if (errorItem.context.label === "Password")
-              errorMsgs += `סיסמא חייבת להכיל לפחות 6 תווים`;
+              errorMsgs += `סיסמא חייבת להכיל לפחות 8 תווים`;
             if (errorItem.context.label === "Email")
               errorMsgs += `אימייל חייב להכיל לפחות 6 תווים`;
             break;
