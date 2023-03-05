@@ -26,6 +26,7 @@ import {
   USER_UPDATE_SUCCESS,
 } from "../constants/userConstants";
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
+import { toast } from "react-toastify";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -43,7 +44,7 @@ export const login = (email, password) => async (dispatch) => {
       { email, password },
       config
     );
-
+    toast.success("התחברת בהצלחה");
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
 
     localStorage.setItem("userInfo", JSON.stringify(data));
@@ -55,6 +56,7 @@ export const login = (email, password) => async (dispatch) => {
           ? err.response.data.message
           : err.message,
     });
+    toast.error("התחברות נכשלה");
   }
 };
 
@@ -82,6 +84,7 @@ export const register = (name, email, password) => async (dispatch) => {
       { name, email, password },
       config
     );
+    toast.success("משתמש נוצר בהצלחה");
 
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
 
@@ -96,6 +99,7 @@ export const register = (name, email, password) => async (dispatch) => {
           ? err.response.data.message
           : err.message,
     });
+    toast.error("אירעה שגיאה");
   }
 };
 

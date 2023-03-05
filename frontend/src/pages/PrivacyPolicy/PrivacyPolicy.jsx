@@ -10,26 +10,11 @@ const PrivacyPolicy = () => {
             <div className="col-12">
               <div className="policy">
                 <h3>מדיניות פרטיות</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות פרטיות</p>
                 <h3>מדיניות פרטיות</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות פרטיות</p>
                 <h3>מדיניות פרטיות</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות פרטיות</p>
               </div>
             </div>
           </div>

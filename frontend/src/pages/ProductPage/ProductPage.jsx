@@ -20,6 +20,7 @@ import {
 import { PRODUCT_CREATE_REVIEW_RESET } from "../../constants/productConstants";
 import Meta from "../../components/Meta/Meta";
 import "./productPage.css";
+import { toast } from "react-toastify";
 
 const ProductPage = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -51,6 +52,7 @@ const ProductPage = ({ history, match }) => {
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
+    toast.success("המוצר נוסף לעגלה");
   };
 
   const submitHandler = (e) => {
@@ -65,9 +67,11 @@ const ProductPage = ({ history, match }) => {
 
   return (
     <>
-      <Link className="btn btn-light my-3" to="/">
-        חזור
-      </Link>
+      <div dir="rtl" className="d-flex justify-content-start">
+        <Link className="btn btn-light my-3" to="/">
+          חזור
+        </Link>
+      </div>
       {loading ? (
         <Loader />
       ) : error ? (

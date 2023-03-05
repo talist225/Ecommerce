@@ -19,11 +19,18 @@
   transform: scale(1.2);
 }
 
+.contact-mail a {
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
 @media only screen and (max-width: 1024px) {
   .contact-mail {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 15px;
     margin-bottom: 10px;
   }

@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../../actions/cartActions";
 import "./cartPage.css";
+import { toast } from "react-toastify";
 
 const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -28,6 +29,7 @@ const CartPage = ({ match, location, history }) => {
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
+    toast.success("המוצר הוסר מהעגלה");
   };
 
   const checkoutHandler = () => {

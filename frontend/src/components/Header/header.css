@@ -86,6 +86,7 @@ navbar-toggler {
   background: var(--sixth-color);
   color: var(--secondary-color);
   bottom: 50px;
+  text-align: center !important;
   font-size: 0.7rem;
   width: 15px;
   border-radius: 100px;

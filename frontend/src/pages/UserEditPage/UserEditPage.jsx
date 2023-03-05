@@ -85,14 +85,18 @@ const UserEditPage = ({ match, history }) => {
             <Form.Group controlId="isadmin">
               <Form.Check
                 type="checkbox"
-                label="הגדרת משתמש זה כמנהל"
+                label=" &nbsp;&nbsp;&nbsp;&nbsp;הגדרת משתמש זה כמנהל"
                 checked={isAdmin}
                 onChange={(e) => setIsAdmin(e.target.checked)}
                 className="mt-4 text-center"
               ></Form.Check>
             </Form.Group>
 
-            <Button type="submit" variant="primary" className="mt-4">
+            <Button
+              type="submit"
+              variant="primary"
+              className="mt-4 w-100 text-center"
+            >
               עדכן
             </Button>
           </Form>

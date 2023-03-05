@@ -16,14 +16,6 @@
   border-bottom-right-radius: 10px !important;
 }
 
-button {
-  height: 100%;
-  transition: 0.1s ease-in-out;
-  border: none;
-  background-color: #f7f7f9;
-  margin-left: 100px;
-}
-
 button:hover:active {
   background-color: #febd69;
 }
@@ -37,6 +29,11 @@ button:hover:active {
   font-size: 1.6em;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  height: 100%;
+  transition: 0.1s ease-in-out;
+  border: none;
+  background-color: #f7f7f9;
+  margin-left: 100px;
 }
 
 .search-box {

@@ -6,8 +6,10 @@ import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { login } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer/FormContainer";
-import { toast } from "react-toastify";
+import loginSchema from "../../validation/login.validation";
+import validate from "../../validation/validation";
 import "./loginPage.css";
+import { toast } from "react-toastify";
 
 const LoginPage = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -28,12 +30,40 @@ const LoginPage = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
-    if (dispatch.login === (email && password)) {
-      toast.success("התחברת בהצלחה");
-    } else {
-      toast.error("התחברות נכשלה");
+    const error = validate({ email, password }, loginSchema);
+    if (error.error) {
+      let errorMsgs = "";
+      for (let errorItem of error.error.details) {
+        switch (errorItem.type) {
+          case "string.min":
+            if (errorItem.context.label === "Password")
+              errorMsgs += `סיסמא חייבת להכיל מינימום 6 תווים`;
+            if (errorItem.context.label === "Email")
+              errorMsgs += `אימייל חייב להכיל מינימום 6 תווים`;
+            break;
+          case "string.max":
+            if (errorItem.context.label === "Password")
+              errorMsgs += `סיסמא חייבת להכיל מינימום 20 תווים`;
+            if (errorItem.context.label === "Email")
+              errorMsgs += `אימייל חייב להכיל מינימום 100 תווים`;
+            break;
+          default:
+            errorMsgs += "משהו השתבש";
+            break;
+        }
+        toast.error(errorMsgs, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      }
     }
+    dispatch(login(email, password));
   };
 
   return (
@@ -45,7 +75,7 @@ const LoginPage = ({ location, history }) => {
         <Form.Group controlId="email" className="text-center mt-5">
           <Form.Label>אימייל</Form.Label>
           <Form.Control
-            type="email"
+            type="text"
             placeholder="אימייל"
             value={email}
             onChange={(e) => setEmail(e.target.value)}

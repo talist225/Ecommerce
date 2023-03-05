@@ -6,6 +6,9 @@ import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { register } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer/FormContainer";
+import registerSchema from "../../validation/register.validation";
+import validate from "../../validation/validation";
+import { toast } from "react-toastify";
 
 const RegisterPage = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -29,6 +32,44 @@ const RegisterPage = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    const error = validate({ name, email, password }, registerSchema);
+    if (error.error) {
+      let errorMsgs = "";
+      for (let errorItem of error.error.details) {
+        switch (errorItem.type) {
+          case "string.min":
+            if (errorItem.context.label === "Name")
+              errorMsgs += `שם חייב להכיל לפחות 2 תווים`;
+            if (errorItem.context.label === "Password")
+              errorMsgs += `סיסמא חייבת להכיל לפחות 6 תווים`;
+            if (errorItem.context.label === "Email")
+              errorMsgs += `אימייל חייב להכיל לפחות 6 תווים`;
+            break;
+          case "string.max":
+            if (errorItem.context.label === "Name")
+              errorMsgs += `שם חייב להכיל 50 תווים לכל היותר `;
+            if (errorItem.context.label === "Password")
+              errorMsgs += `שם חייב להכיל 20 תווים לכל היותר `;
+            if (errorItem.context.label === "Email")
+              errorMsgs += `שם חייב להכיל 100 תווים לכל היותר `;
+            break;
+          default:
+            errorMsgs += "משהו השתבש";
+            break;
+        }
+        toast.error(errorMsgs, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      }
+    }
     if (password !== confirmPassword) {
       setMessage("סיסמא לא תואמת");
     } else {
@@ -38,16 +79,16 @@ const RegisterPage = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1>הרשמה</h1>
+      <h1 className="text-center">הרשמה</h1>
       {message && <Message variant="danger">{message}</Message>}
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="name">
-          <Form.Label>שם</Form.Label>
+          <Form.Label className="text-center">שם</Form.Label>
           <Form.Control
             type="name"
-            placeholder="שם"
+            placeholder="ישראל ישראלי"
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></Form.Control>
@@ -57,7 +98,7 @@ const RegisterPage = ({ location, history }) => {
           <Form.Label>אימייל</Form.Label>
           <Form.Control
             type="email"
-            placeholder="אימייל"
+            placeholder="example@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -83,13 +124,17 @@ const RegisterPage = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary" className="mt-4">
+        <Button
+          type="submit"
+          variant="primary"
+          className="mt-4 w-100 text-center"
+        >
           הרשמה
         </Button>
       </Form>
 
       <Row className="py-3">
-        <Col>
+        <Col className="text-center">
           משתמש קיים? &nbsp;
           <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>
             לחץ כאן

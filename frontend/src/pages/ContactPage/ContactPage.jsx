@@ -22,7 +22,7 @@ const ContactPage = () => {
           <span className="fw-bold mt-1">גם במייל:</span>
           <a
             href="mailto:talist225@gmail.com"
-            className="mt-2 d-block mb-1 text-success"
+            className="mt-2 mb-1 text-success"
           >
             talist225@gmail.com
           </a>

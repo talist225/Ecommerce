@@ -10,26 +10,11 @@ const ShippingPolicy = () => {
             <div className="col-12">
               <div className="policy">
                 <h3>מדיניות משלוחים</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות משלוחים</p>
                 <h3>מדיניות משלוחים</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות משלוחים</p>
                 <h3>מדיניות משלוחים</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Saepe at odio excepturi ut dolorum repellendus earum deserunt
-                  culpa. Dicta odio ut sunt eos ipsa qui voluptas laudantium
-                  provident earum distinctio.
-                </p>
+                <p>תוכן מדיניות משלוחים</p>
               </div>
             </div>
           </div>

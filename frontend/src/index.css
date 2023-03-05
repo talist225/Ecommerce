@@ -1,8 +1,9 @@
 * {
+  direction: rtl !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
-  direction: rtl !important;
+  text-align: right !important;
 }
 
 :root {
