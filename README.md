@@ -1,6 +1,6 @@
 # Ecommerce - HackerU final project
 
-Welcome to my E-Commerce Hacker-U project. This is a fullstack project with frontend and backend.
+Welcome to my E-Commerce Hacker-U project. This is a fullstack project built from scratch with frontend and backend.
 
 ### Website demo:
 
@@ -32,6 +32,11 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project with fron
 * axios
 * React-Bootstrap
 * toastify
+
+### Login as admin example:
+Email: admin@example.com
+Password: 12345678
+
 
 
 
