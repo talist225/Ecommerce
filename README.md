@@ -49,5 +49,14 @@ A user can easily add products to their cart by clicking the "Add to Cart" butto
 #### As admin user:
 An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), change user type (to admin), delete users, and viewing all orders placed on the site.
 
+#### Store page
+The store page allows users to browse and view all available products, making it easy for them to find what they are looking for and make a purchase.
 
+#### Search bar
+Search bar allows users to search for specific products by typing in relevant keywords, and displays a list of products that match the query along with the corresponding URL.
 
+#### Add new product
+Using the admin panel, an admin can create a new product by providing details such as the product name, image, price, brand, available stock, category, and description, ensuring that customers have all the necessary information before making a purchase.
+
+#### Login
+When logging into website, users are required to provide their login credentials, which are then validated by joi-browser to ensure that the information entered is accurate and matches the user's account details.
