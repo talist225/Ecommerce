@@ -3,8 +3,8 @@
 Welcome to my E-Commerce Hacker-U project. This is a fullstack project with frontend and backend.
 
 ### Website demo:
-[https://ty-ecommerce.onrender.com/]
 
+[https://ty-ecommerce.onrender.com/](url)
 
 ### Install node_modules:
 `npm i`
