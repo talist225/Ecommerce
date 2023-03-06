@@ -34,8 +34,8 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project built fro
 * toastify
 
 ### Login as admin example:
-Email: admin@example.com
-Password: 12345678
+- Email: admin@example.com
+- Password: 12345678
 
 
 
