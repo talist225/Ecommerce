@@ -49,6 +49,8 @@ https://documenter.getpostman.com/view/26188259/2s93JnVSZa
 - Email: ty-paypal@example.com
 - Password: 12345678
 
+## Users can login on live website. 
+
 There are two types of users - admin and normal user.
 #### As normal user:
 A normal user can edit its own profile (name, email and password), a table with 'My orders' that includes paid status (X/V) and a status of delivered order(X/V).
