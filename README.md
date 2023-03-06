@@ -96,3 +96,6 @@ A product card displays all relevant information about a particular item, includ
 
 #### Footer
 The footer section contains all the important information that customers may need, such as contact details, links to social media pages, terms and conditions, privacy policy, shipping and returns policy, and any other relevant information that can help customers make informed decisions before making a purchase.
+
+#### Pagination
+pagination system is designed to efficiently display a large number of products by dividing them into smaller, more manageable pages, allowing users to navigate through the site with ease and ensuring that load times remain fast and reliable.
