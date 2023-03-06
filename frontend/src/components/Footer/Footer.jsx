@@ -38,7 +38,11 @@ const Footer = () => {
       <footer className="py-4">
         <div className="container m-auto">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-sm-3">
+              <h1 className="text-white">טל-פון</h1>
+              <h3 className="text-white">חנות אונליין</h3>
+            </div>
+            <div className="col-sm-3">
               <h4 className="text-white mb-4">צרו קשר</h4>
               <div>
                 <address className="text-white">
@@ -72,7 +76,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-3">
               <h4 className="text-white mb-4">מידע כללי</h4>
               <div className="footer-links d-flex flex-column">
                 <Link to="/privacy-policy" className="text-white py-2 mb-1">
@@ -89,7 +93,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-sm-4">
+            <div className="col-sm-3">
               <h4 className="text-white mb-4">משתמש</h4>
               <div className="footer-links d-flex flex-column">
                 <Link to="/login" className="text-white py-2 mb-1">
