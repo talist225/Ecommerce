@@ -119,3 +119,9 @@ To ensure the security of user data in the project, hashed passwords can be used
 
 #### Backend architecture
 the backend organized using a model-view-controller (MVC) architecture, with controllers, routes, models, middlewares, and configuration files all serving specific roles in managing data and functionality within the application, allowing for a more modular and organized approach to development that makes it easier to maintain and scale the project over time.
+
+#### Authorization and authentication
+In my ecommerce project, I employed robust authentication and authorization mechanisms in the backend to ensure that only authorized users had access to sensitive data and functionality, utilizing techniques such as user authentication and role-based access control to authenticate and authorize user actions and manage access to different parts of the application based on user privileges and permissions, resulting in a more secure and reliable ecommerce platform for users and admins.
+
+#### MongoDB
+I utilized the MongoDB cloud database to store and manage all of the project's data, including user account information, product details, order history, and more.
