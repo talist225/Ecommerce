@@ -15,7 +15,7 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project built fro
 ### In order to run client side:
 `npm start`
 
-## Postman requests documintation of my project:
+## Postman requests documentation of my project:
 https://documenter.getpostman.com/view/26188259/2s93JnVSZa
 
 ### Technologies used to create the Backend:
