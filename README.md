@@ -53,11 +53,7 @@ A user can easily add products to their cart by clicking the "Add to Cart" butto
 #### As admin user:
 An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), change user type (to admin), delete users, and viewing all orders placed on the site.
 
-#### Store page
-The store page allows users to browse and view all available products, making it easy for them to find what they are looking for and make a purchase.
 
-#### Search bar
-Search bar allows users to search for specific products by typing in relevant keywords, and displays a list of products that match the query along with the corresponding URL.
 
 #### Add new product
 Using the admin panel, an admin can create a new product by providing details such as the product name, image, price, brand, available stock, category, and description, ensuring that customers have all the necessary information before making a purchase.
@@ -65,11 +61,20 @@ Using the admin panel, an admin can create a new product by providing details su
 #### Edit/delete users as admin
 Admin panel provides the ability to view a list of all registered users, including their personal information(name and email only), order history, and account status, with the option to edit or delete user accounts as needed for efficient management of the website.
 
+#### View all orders as admin
+Admin panel allows admin to not only view all orders placed on the site, but also provides the ability to accept and process orders, enabling the efficient fulfillment of customer purchases and ensuring a positive experience for all users.
+
 #### Register
 The registration process involves the user entering their personal details, which are then validated by joi-browser system to ensure that the information provided is accurate and meets the website's requirements for creating an account. A new user cannot be created if email is already in use.
 
 #### Login
 When logging into website, users are required to provide their login credentials, which are then validated by joi-browser to ensure that the information entered is accurate and matches the user's account details.
+
+#### Store page
+The store page allows users to browse and view all available products, making it easy for them to find what they are looking for and make a purchase.
+
+#### Search bar
+Search bar allows users to search for specific products by typing in relevant keywords, and displays a list of products that match the query along with the corresponding URL.
 
 #### Place an order
 Once a user has provided their address information and selected their preferred payment method, such as PayPal or Visa, they can easily place an order and complete the transaction, allowing them to receive their desired products in a timely and efficient manner.
@@ -86,4 +91,5 @@ The cart feature displays a list of all products that have been added by the use
 #### Product card
 A product card displays all relevant information about a particular item, including product details, images, price, and availability, while also featuring an "Add to Cart" button for easy purchasing, as well as a review system that allows users to provide valuable feedback about their experience with the product.
 
-
+#### Footer
+The footer section contains all the important information that customers may need, such as contact details, links to social media pages, terms and conditions, privacy policy, shipping and returns policy, and any other relevant information that can help customers make informed decisions before making a purchase.
