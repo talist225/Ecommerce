@@ -1,6 +1,6 @@
 # Ecommerce - HackerU final project
 
-Welcome to my E-Commerce Hacker-U project. This is a fullstack project built from scratch with frontend and backend.
+Welcome to my E-Commerce Hacker-U project. This is a fullstack project built from scratch with frontend and backend, fully responsive to all mobiles and PC.
 
 ### Website demo:
 
@@ -54,6 +54,8 @@ A user can easily add products to their cart by clicking the "Add to Cart" butto
 An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), change user type (to admin), delete users, and viewing all orders placed on the site.
 
 
+#### Header
+The header section includes all the links and options necessary for users to navigate the website easily, such as search bar, login and registration, and a cart icon that displays the total number of products currently in the user's cart, making it easy for them to keep track of their selections throughout their shopping experience.
 
 #### Add new product
 Using the admin panel, an admin can create a new product by providing details such as the product name, image, price, brand, available stock, category, and description, ensuring that customers have all the necessary information before making a purchase.
@@ -87,6 +89,7 @@ Payment system based on trusted and widely-used methods such as PayPal and Visa,
 
 #### Cart
 The cart feature displays a list of all products that have been added by the user, along with their corresponding prices, and calculates the total cost of the purchase, providing a comprehensive summary of the items selected before proceeding to checkout.
+Continue to payment page requires login.
 
 #### Product card
 A product card displays all relevant information about a particular item, including product details, images, price, and availability, while also featuring an "Add to Cart" button for easy purchasing, as well as a review system that allows users to provide valuable feedback about their experience with the product.
