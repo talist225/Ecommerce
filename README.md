@@ -35,6 +35,7 @@ https://documenter.getpostman.com/view/26188259/2s93JnVSZa
 * axios
 * React-Bootstrap
 * toastify
+* JavaScript
 
 ### Login as admin example:
 - Email: admin@example.com
