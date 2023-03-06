@@ -41,6 +41,10 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project built fro
 - Email: user@example.com
 - Password: 12345678
 
+### Paypal sandbox user for payment:
+- Email: ty-paypal@example.com
+- Password: 12345678
+
 There are two types of users - admin and normal user.
 #### As normal user:
 A normal user can edit its own profile (name, email and password), a table with 'My orders' that includes paid status (X/V) and a status of delivered order(X/V).
@@ -66,3 +70,12 @@ When logging into website, users are required to provide their login credentials
 
 #### Place an order
 Once a user has provided their address information and selected their preferred payment method, such as PayPal or Visa, they can easily place an order and complete the transaction, allowing them to receive their desired products in a timely and efficient manner.
+
+#### Reviews system
+Review and rating system is designed to provide users with helpful feedback from other customers, but can only be accessed when the user is logged into their account to ensure that the system is accurate and reliable.
+
+#### Payment system
+Payment system based on trusted and widely-used methods such as PayPal and Visa, making it easy for customers to complete their transactions securely and efficiently.
+
+#### Cart
+The cart feature displays a list of all products that have been added by the user, along with their corresponding prices, and calculates the total cost of the purchase, providing a comprehensive summary of the items selected before proceeding to checkout.
