@@ -47,5 +47,7 @@ A normal user can edit its own profile (name, email and password), a table with 
 A user can easily add products to their cart by clicking the "Add to Cart" button next to the item they want to purchase.
 
 #### As admin user:
-An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), give an admin premission, delete users, and viewing all orders placed on the site.
+An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), change user type (to admin), delete users, and viewing all orders placed on the site.
+
+
 
