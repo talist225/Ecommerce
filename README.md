@@ -62,6 +62,9 @@ Search bar allows users to search for specific products by typing in relevant ke
 #### Add new product
 Using the admin panel, an admin can create a new product by providing details such as the product name, image, price, brand, available stock, category, and description, ensuring that customers have all the necessary information before making a purchase.
 
+#### Edit/delete users as admin
+Admin panel provides the ability to view a list of all registered users, including their personal information(name and email only), order history, and account status, with the option to edit or delete user accounts as needed for efficient management of the website.
+
 #### Register
 The registration process involves the user entering their personal details, which are then validated by joi-browser system to ensure that the information provided is accurate and meets the website's requirements for creating an account. A new user cannot be created if email is already in use.
 
@@ -79,3 +82,8 @@ Payment system based on trusted and widely-used methods such as PayPal and Visa,
 
 #### Cart
 The cart feature displays a list of all products that have been added by the user, along with their corresponding prices, and calculates the total cost of the purchase, providing a comprehensive summary of the items selected before proceeding to checkout.
+
+#### Product card
+A product card displays all relevant information about a particular item, including product details, images, price, and availability, while also featuring an "Add to Cart" button for easy purchasing, as well as a review system that allows users to provide valuable feedback about their experience with the product.
+
+
