@@ -63,3 +63,6 @@ The registration process involves the user entering their personal details, whic
 
 #### Login
 When logging into website, users are required to provide their login credentials, which are then validated by joi-browser to ensure that the information entered is accurate and matches the user's account details.
+
+#### Place an order
+Once a user has provided their address information and selected their preferred payment method, such as PayPal or Visa, they can easily place an order and complete the transaction, allowing them to receive their desired products in a timely and efficient manner.
