@@ -186,7 +186,11 @@ const ProductEditPage = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary" className="mt-4">
+            <Button
+              type="submit"
+              variant="primary"
+              className="mt-4 w-100 text-center"
+            >
               עדכן
             </Button>
           </Form>
