@@ -44,7 +44,7 @@ button:hover:active {
   .search-bar {
     margin-right: auto;
     margin-left: auto;
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,5 +65,9 @@ button:hover:active {
 
   .search-icon {
     height: 48px;
+  }
+
+  .search-icon i {
+    color: black;
   }
 }
