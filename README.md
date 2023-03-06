@@ -2,7 +2,7 @@
 
 Welcome to my E-Commerce Hacker-U project. This is a fullstack project built from scratch with frontend and backend, fully responsive to all mobiles and PC.
 
-### Website demo:
+### Live website:
 
 [https://ty-ecommerce.onrender.com/](url)
 
@@ -14,6 +14,9 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project built fro
 
 ### In order to run client side:
 `npm start`
+
+## Postman requests documintation of my project:
+https://documenter.getpostman.com/view/26188259/2s93JnVSZa
 
 ### On server side I used:
 * Node.js
@@ -54,8 +57,8 @@ A user can easily add products to their cart by clicking the "Add to Cart" butto
 An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), change user type (to admin), delete users, and viewing all orders placed on the site.
 
 
-#### Header
-The header section includes all the links and options necessary for users to navigate the website easily, such as search bar, login and registration, and a cart icon that displays the total number of products currently in the user's cart, making it easy for them to keep track of their selections throughout their shopping experience.
+#### Header - Navigation bar
+The header section includes all the links and options necessary for users to navigate the website easily, such as search bar, login and registration, contact and a cart icon that displays the total number of products currently in the user's cart, making it easy for them to keep track of their selections throughout their shopping experience.
 
 #### Add new product
 Using the admin panel, an admin can create a new product by providing details such as the product name, image, price, brand, available stock, category, and description, ensuring that customers have all the necessary information before making a purchase.
@@ -102,3 +105,5 @@ Pagination system is designed to efficiently display a large number of products 
 
 #### Carousel product
 Dynamically update the top 3 rated products based on user reviews and ratings, ensuring that the most popular and highly-rated items are always prominently featured and providing valuable feedback for both customers and the website's admin.
+
+#### 
