@@ -108,7 +108,8 @@ Pagination system is designed to efficiently display a large number of products 
 #### Carousel product
 Dynamically update the top 3 rated products based on user reviews and ratings, ensuring that the most popular and highly-rated items are always prominently featured and providing valuable feedback for both customers and the website's admin.
 
-
+#### Redux
+In my ecommerce project, I used Redux to efficiently manage the flow of data between the backend and frontend, allowing me to easily retrieve and update information from the backend as needed, and providing a centralized store for application state that could be accessed by components throughout the frontend, resulting in a more streamlined and responsive user experience.
 --------------------------
 ## Backend:
 
