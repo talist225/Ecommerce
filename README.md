@@ -37,6 +37,15 @@ Welcome to my E-Commerce Hacker-U project. This is a fullstack project built fro
 - Email: admin@example.com
 - Password: 12345678
 
+### Login as user example:
+- Email: user@example.com
+- Password: 12345678
 
+There are two types of users - admin and normal user.
+#### As normal user:
+A normal user can edit its own profile (name, email and password), a table with 'My orders' that includes paid status (X/V) and a status of delivered order(X/V).
+A user can easily add products to their cart by clicking the "Add to Cart" button next to the item they want to purchase.
 
+#### As admin user:
+An admin has the ability to manage by creating new products, editing existing products, managing user accounts by changing user information(name and email only), give an admin premission, delete users, and viewing all orders placed on the site.
 
