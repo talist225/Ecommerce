@@ -8,6 +8,7 @@
 
 .navbar {
   background-color: #131921 !important;
+  padding: 0.5rem;
 }
 
 .navbar .brand {
@@ -17,6 +18,11 @@
 
 .navbar .menu-links {
   font-size: 13px;
+  transition: 0.1s ease-in-out;
+}
+
+.menu-links:hover {
+  color: var(--third-color) !important;
 }
 
 .navbar .nav-link i {
@@ -85,7 +91,7 @@ navbar-toggler {
   position: absolute;
   background: var(--sixth-color);
   color: var(--secondary-color);
-  bottom: 60px;
+  bottom: 47px;
   text-align: center !important;
   font-size: 0.7rem;
   width: 15px;
@@ -111,7 +117,7 @@ navbar-toggler {
   }
 
   .cart-count {
-    bottom: 50px;
+    bottom: 35px;
   }
 }
 

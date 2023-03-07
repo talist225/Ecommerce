@@ -17,7 +17,8 @@
 }
 
 button:hover:active {
-  background-color: #febd69;
+  background-color: var(--third-color);
+  color: black;
 }
 
 .search-icon:focus {
@@ -34,6 +35,10 @@ button:hover:active {
   border: none;
   background-color: #f7f7f9;
   margin-left: 100px;
+}
+
+.search-icon:hover {
+  background-color: var(--third-color) !important;
 }
 
 .search-box {
