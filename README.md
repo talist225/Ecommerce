@@ -39,11 +39,11 @@ https://documenter.getpostman.com/view/26188259/2s93JnVSZa
 
 ### Login as admin example:
 - Email: admin@example.com
-- Password: 12345678
+- Password: Admin@1234
 
 ### Login as user example:
 - Email: user@example.com
-- Password: 12345678
+- Password: User@1234
 
 ### Paypal sandbox user for payment:
 - Email: ty-paypal@example.com
@@ -75,6 +75,7 @@ Admin panel allows admin to not only view all orders placed on the site, but als
 
 #### Register
 The registration process involves the user entering their personal details, which are then validated by joi-browser system to ensure that the information provided is accurate and meets the website's requirements for creating an account. A new user cannot be created if email is already in use.
+I coded regex validation for both my password and email to ensure that they met the necessary requirements and provided a secure user experience.
 
 #### Login
 When logging into website, users are required to provide their login credentials, which are then validated by joi-browser to ensure that the information entered is accurate and matches the user's account details.
