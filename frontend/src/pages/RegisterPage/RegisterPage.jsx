@@ -9,6 +9,8 @@ import FormContainer from "../../components/FormContainer/FormContainer";
 import registerSchema from "../../validation/register.validation";
 import validate from "../../validation/validation";
 import { toast } from "react-toastify";
+import PasswordRequirements from "../../components/PasswordRequirements/PasswordRequirements";
+import "./registerPage.css";
 
 const RegisterPage = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -16,6 +18,14 @@ const RegisterPage = ({ location, history }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
+
+  const [pwdRequest, setPwdRequest] = useState(true);
+  const [checks, setChecks] = useState({
+    capsLetterCheck: false,
+    numberCheck: false,
+    pwdLengthCheck: false,
+    specialCharCheck: false,
+  });
 
   const dispatch = useDispatch();
 
@@ -55,7 +65,7 @@ const RegisterPage = ({ location, history }) => {
               errorMsgs += `שם חייב להכיל 100 תווים לכל היותר `;
             break;
           default:
-            errorMsgs += "משהו השתבש";
+            errorMsgs += "יש למלא את כל הפרטים";
             break;
         }
         toast.error(errorMsgs, {
@@ -77,10 +87,50 @@ const RegisterPage = ({ location, history }) => {
     }
   };
 
+  const handlePasswordStr = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleOnFocus = () => {
+    setPwdRequest(true);
+  };
+
+  const handleOnBlur = () => {
+    setPwdRequest(false);
+  };
+
+  const handleOnKeyUp = (e) => {
+    const { value } = e.target;
+    const capsLetterCheck = /[A-Z]/.test(value);
+    const numberCheck = /[0-9]/.test(value);
+    const pwdLengthCheck = value.length > 8;
+    const specialCharCheck = /[!@#$%^&*-_]/.test(value);
+    setChecks({
+      capsLetterCheck,
+      numberCheck,
+      pwdLengthCheck,
+      specialCharCheck,
+    });
+  };
+
+  const emailValidation = (e) => {
+    setEmail(e.target.value);
+    const regExp = /^[\w-/.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (regExp.test(email)) {
+      setMessage("*תקין");
+    } else if (email === "") {
+      setMessage("*נא למלא אימייל");
+    } else if (!regExp.test(email)) {
+      setMessage("*אימייל לא תקין");
+    } else {
+      setMessage("");
+    }
+  };
+
   return (
     <FormContainer>
       <h1 className="text-center">הרשמה</h1>
-      {message && <Message variant="danger">{message}</Message>}
+      {/* {message && <Message variant="danger">{message}</Message>} */}
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
@@ -101,8 +151,14 @@ const RegisterPage = ({ location, history }) => {
             placeholder="example@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onInput={emailValidation}
           ></Form.Control>
         </Form.Group>
+
+        <p className="email-validation mt-2">
+          &nbsp;
+          {message}
+        </p>
 
         <Form.Group controlId="password">
           <Form.Label>סיסמא</Form.Label>
@@ -111,8 +167,21 @@ const RegisterPage = ({ location, history }) => {
             placeholder="סיסמא"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onInput={handlePasswordStr}
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            onKeyUp={handleOnKeyUp}
           ></Form.Control>
         </Form.Group>
+
+        {pwdRequest ? (
+          <PasswordRequirements
+            capsLetterFlag={checks.capsLetterCheck ? "valid" : "invalid"}
+            numberFlag={checks.numberCheck ? "valid" : "invalid"}
+            pwdLengthFlag={checks.pwdLengthCheck ? "valid" : "invalid"}
+            specialCharFlag={checks.specialCharCheck ? "valid" : "invalid"}
+          />
+        ) : null}
 
         <Form.Group controlId="confirmPassword">
           <Form.Label>אישור סיסמא</Form.Label>

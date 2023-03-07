@@ -44,5 +44,14 @@ main {
   margin-top: 12%;
 }
 
+/*Password validation of registeration*/
+.valid {
+  color: green !important;
+}
+
+.invalid {
+  color: red !important;
+}
+
 @media only screen and (max-width: 1024px) {
 }
