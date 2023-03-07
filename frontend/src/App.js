@@ -25,6 +25,7 @@ import ShippingPolicy from "./pages/ShippingPolicy/ShippingPolicy";
 import TermAndCon from "./pages/TermAndCon/TermAndCon";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import StorePage from "./pages/StorePage/StorePage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Route path="/order/:id" component={OrderPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/shipping" component={ShippingPage} />
           <Route path="/store" component={StorePage} />
           <Route path="/payment" component={PaymentPage} />

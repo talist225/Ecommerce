@@ -118,7 +118,9 @@ const Header = () => {
                     <NavLink className="link" to="/store">
                       חנות
                     </NavLink>
-
+                    <NavLink className="link" to="/about">
+                      אודות
+                    </NavLink>
                     <NavLink className="link" to="/contact">
                       יצירת קשר
                     </NavLink>
