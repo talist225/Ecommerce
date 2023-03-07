@@ -52,6 +52,8 @@ const ProfilePage = ({ location, history }) => {
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (
