@@ -11,7 +11,7 @@ const PasswordRequirements = ({
     <>
       <div className="req-style mt-2">
         <p className={capsLetterFlag}>&nbsp;*חייב להכיל אות גדולה באנגלית</p>
-        <p className={numberFlag}> &nbsp;*חייב להכיל לפחות מספר אחד</p>
+        <p className={numberFlag}> &nbsp;*חייב להכיל לפחות 4 מספרים</p>
         <p className={pwdLengthFlag}>&nbsp;*לפחות 8 תווים</p>
         <p className={specialCharFlag}>
           &nbsp;*חייב להכיל אחד מהסימנים !@#$%^&*-_

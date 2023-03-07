@@ -105,7 +105,7 @@ const RegisterPage = ({ location, history }) => {
       const { value } = e.target;
       const capsLetterCheck = /[A-Z]/.test(value);
       console.log(value);
-      const numberCheck = /[0-9]/.test(value);
+      const numberCheck = /[0-9]{4}/.test(value);
       const pwdLengthCheck = value.length > 8;
       const specialCharCheck = /[!@#$%^&*_-]/.test(value);
       console.log(specialCharCheck);
