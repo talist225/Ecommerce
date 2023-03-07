@@ -101,14 +101,13 @@ const RegisterPage = ({ location, history }) => {
 
   const handleOnKeyUp = (e) => {
     if (e.key !== "Shift") {
-      console.log(e);
       const { value } = e.target;
       const capsLetterCheck = /[A-Z]/.test(value);
-      console.log(value);
-      const numberCheck = /[0-9]{4}/.test(value);
+      const numberCheck = /^(?=(?:\D*\d){4})\b(?:\d\w*\d\w*|\d{4}\w*)+\b$/.test(
+        value
+      );
       const pwdLengthCheck = value.length > 8;
       const specialCharCheck = /[!@#$%^&*_-]/.test(value);
-      console.log(specialCharCheck);
       setChecks({
         capsLetterCheck,
         numberCheck,
