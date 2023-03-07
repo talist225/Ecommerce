@@ -94,6 +94,9 @@ navbar-toggler {
   font-weight: bolder;
 }
 
+.navbar-brand {
+  margin-right: 0 !important;
+}
 @media only screen and (max-width: 1024px) {
   .cart {
     width: 35%;
@@ -109,5 +112,11 @@ navbar-toggler {
 
   .cart-count {
     bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navbar-brand {
+    width: 80%;
   }
 }

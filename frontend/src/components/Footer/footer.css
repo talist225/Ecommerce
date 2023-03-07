@@ -31,6 +31,9 @@ footer .input-group-text {
 
   .newsletter {
     gap: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
   }
 
   .footer-logo {
@@ -46,12 +49,13 @@ footer .input-group-text {
     display: flex !important;
     justify-content: center !important;
     height: 12vh;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .footer-logo {
-    width: 70%;
+    width: 70% !important;
     margin: auto;
+  }
+
+  .newsletter {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
   }
 }
