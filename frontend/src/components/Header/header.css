@@ -85,7 +85,7 @@ navbar-toggler {
   position: absolute;
   background: var(--sixth-color);
   color: var(--secondary-color);
-  bottom: 50px;
+  bottom: 60px;
   text-align: center !important;
   font-size: 0.7rem;
   width: 15px;
@@ -105,5 +105,9 @@ navbar-toggler {
     align-items: center;
     gap: 2rem;
     font-size: 1.1rem;
+  }
+
+  .cart-count {
+    bottom: 50px;
   }
 }

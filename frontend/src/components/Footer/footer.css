@@ -32,4 +32,26 @@ footer .input-group-text {
   .newsletter {
     gap: 15px;
   }
+
+  .footer-logo {
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 10px;
+    height: 15vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-logo {
+    display: flex !important;
+    justify-content: center !important;
+    height: 12vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-logo {
+    width: 70%;
+    margin: auto;
+  }
 }

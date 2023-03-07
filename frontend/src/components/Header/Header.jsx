@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Image } from "react-bootstrap";
 import SearchBox from "../SearchBox/SearchBox";
 import { logout } from "../../actions/userActions";
 import "./header.css";
@@ -32,7 +32,12 @@ const Header = () => {
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand>
-                  <span className="brand">טל-פון</span>
+                  <Image
+                    src="images/tal-phone.png"
+                    alt="טל-פון"
+                    fluid
+                    className="w-75"
+                  />
                 </Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />

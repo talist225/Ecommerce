@@ -2,6 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { Image } from "react-bootstrap";
 
 const Footer = () => {
   return (
@@ -38,9 +39,15 @@ const Footer = () => {
       <footer className="py-4">
         <div className="container m-auto">
           <div className="row">
-            <div className="col-sm-3">
-              <h1 className="text-white">טל-פון</h1>
-              <h3 className="text-white">חנות אונליין</h3>
+            <div className="col-sm-3  footer-logo">
+              {/* <h1 className="text-white">טל-פון</h1>
+              <h3 className="text-white">חנות אונליין</h3> */}
+              <Image
+                src="images/tal-phone2.png"
+                alt="טל-פון"
+                fluid
+                className="w-75"
+              />
             </div>
             <div className="col-sm-3">
               <h4 className="text-white mb-4">צרו קשר</h4>
