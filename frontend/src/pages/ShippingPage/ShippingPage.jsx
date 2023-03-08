@@ -6,6 +6,7 @@ import { saveShippingAddress } from "../../actions/cartActions";
 import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
 
 const ShippingPage = ({ history }) => {
+  window.scrollTo(0, 0);
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 

@@ -9,6 +9,7 @@ import "./userListPage.css";
 import { toast } from "react-hot-toast";
 
 const UserListPage = ({ history }) => {
+  window.scrollTo(0, 0);
   const dispatch = useDispatch();
 
   const userList = useSelector((state) => state.userList);

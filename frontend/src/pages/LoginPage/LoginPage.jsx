@@ -12,6 +12,7 @@ import "./loginPage.css";
 import { toast } from "react-hot-toast";
 
 const LoginPage = ({ location, history }) => {
+  window.scrollTo(0, 0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -55,7 +56,6 @@ const LoginPage = ({ location, history }) => {
         return;
       }
     }
-
     dispatch(login(email, password));
   };
 

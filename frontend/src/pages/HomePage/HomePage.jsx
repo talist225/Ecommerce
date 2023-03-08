@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import MarqueeSlide from "../../components/Marquee/MarqueeSlide";
 
 const HomePage = ({ match }) => {
+  window.scrollTo(0, 0);
   const keyword = match.params.keyword;
 
   const pageNumber = match.params.pageNumber || 1;
@@ -35,7 +36,6 @@ const HomePage = ({ match }) => {
           חזור
         </Link>
       )}
-
       <h1 className="mt-5 text-center">המוצרים שלנו</h1>
       {loading ? (
         <Loader />

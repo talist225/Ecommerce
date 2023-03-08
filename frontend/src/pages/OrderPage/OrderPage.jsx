@@ -19,6 +19,7 @@ import "./orderPage.css";
 import { toast } from "react-hot-toast";
 
 const OrderPage = ({ match, history }) => {
+  window.scrollTo(0, 0);
   const orderId = match.params.id;
 
   const [sdkReady, setSdkReady] = useState(false);

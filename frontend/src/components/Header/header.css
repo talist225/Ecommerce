@@ -9,6 +9,9 @@
 .navbar {
   background-color: #131921 !important;
   padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .brand {
@@ -118,6 +121,20 @@ navbar-toggler {
 
   .cart-count {
     bottom: 35px;
+  }
+
+  .navbar-nav .menu-links {
+    margin-right: 15px;
+    text-align: center !important;
+  }
+
+  .navbar-nav .menu-links:nth-child(3) {
+    margin-right: 0;
+    text-align: center !important;
+  }
+
+  .navbar-nav .nav-item .show {
+    text-align: center !important;
   }
 }
 

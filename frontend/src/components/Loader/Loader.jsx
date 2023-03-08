@@ -1,22 +1,9 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+// import { Spinner } from "react-bootstrap";
+import "./loader.css";
 
 const Loader = () => {
-  return (
-    <Spinner
-      animation="grow"
-      role="status"
-      style={{
-        width: "50px",
-        height: "50px",
-        margin: "auto",
-        display: "block",
-      }}
-      variant="info"
-    >
-      <span className="sr-only">טוען...</span>
-    </Spinner>
-  );
+  return <div className="loader"></div>;
 };
 
 export default Loader;

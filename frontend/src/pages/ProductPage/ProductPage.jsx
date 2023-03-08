@@ -23,6 +23,7 @@ import "./productPage.css";
 import { toast } from "react-hot-toast";
 
 const ProductPage = ({ history, match }) => {
+  window.scrollTo(0, 0);
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -70,9 +71,14 @@ const ProductPage = ({ history, match }) => {
   return (
     <>
       <div dir="rtl" className="d-flex justify-content-start">
-        <Link className="btn btn-light my-3" to="/">
+        <button
+          className="btn btn-light my-3"
+          onClick={() => {
+            history.goBack();
+          }}
+        >
           חזור
-        </Link>
+        </button>
       </div>
       {loading ? (
         <Loader />
@@ -195,7 +201,7 @@ const ProductPage = ({ history, match }) => {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group controlId="comment">
-                        <Form.Label>ביקורת</Form.Label>
+                        <Form.Label className="mt-3">ביקורת</Form.Label>
                         <Form.Control
                           as="textarea"
                           row="3"
@@ -203,7 +209,7 @@ const ProductPage = ({ history, match }) => {
                           onChange={(e) => setComment(e.target.value)}
                         ></Form.Control>
                       </Form.Group>
-                      <Button type="submit" variant="primary">
+                      <Button type="submit" variant="primary" className="mt-3">
                         שליחה
                       </Button>
                     </Form>

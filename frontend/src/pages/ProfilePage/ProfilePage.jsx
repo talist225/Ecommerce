@@ -11,6 +11,7 @@ import "./profilePage.css";
 import { toast } from "react-hot-toast";
 
 const ProfilePage = ({ location, history }) => {
+  window.scrollTo(0, 0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

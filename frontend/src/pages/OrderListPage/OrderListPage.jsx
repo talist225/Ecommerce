@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import { listOrders } from "../../actions/orderActions";
 
 const OrderListPage = ({ history }) => {
+  window.scrollTo(0, 0);
   const dispatch = useDispatch();
 
   const orderList = useSelector((state) => state.orderList);

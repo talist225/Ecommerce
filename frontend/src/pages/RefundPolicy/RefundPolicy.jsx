@@ -2,6 +2,7 @@ import React from "react";
 import "./refundPolicy.css";
 
 const RefundPolicy = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <section className="refund-wrapper py-5 mt-5">

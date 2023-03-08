@@ -10,6 +10,7 @@ import { listProducts } from "../../actions/productActions";
 import "./storePage.css";
 
 const StorePage = ({ match }) => {
+  window.scrollTo(0, 0);
   const keyword = match.params.keyword;
 
   const pageNumber = match.params.pageNumber || 1;

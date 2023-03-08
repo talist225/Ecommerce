@@ -2,6 +2,7 @@ import React from "react";
 import "./contactPage.css";
 
 const ContactPage = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <h1 className="text-center contact-title">צרו קשר</h1>

@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 import "./paymentPage.css";
 
 const PaymentPage = ({ history }) => {
+  window.scrollTo(0, 0);
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 

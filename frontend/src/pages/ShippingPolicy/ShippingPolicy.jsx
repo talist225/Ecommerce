@@ -2,6 +2,7 @@ import React from "react";
 import "./shippingPolicy.css";
 
 const ShippingPolicy = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <section className="shipping-wrapper py-5 mt-5">

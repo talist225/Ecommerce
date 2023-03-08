@@ -45,7 +45,7 @@ const Header = () => {
                 <Route
                   render={({ history }) => <SearchBox history={history} />}
                 />
-                <Nav className="mr-auto d-flex justify-content-between align-items-center mt-3">
+                <Nav className="d-flex justify-content-between align-items-center mt-3">
                   {userInfo ? (
                     <NavDropdown
                       title={userInfo.name}
@@ -73,7 +73,7 @@ const Header = () => {
                     <NavDropdown
                       title="פאנל מנהל "
                       id="adminmenu"
-                      className="menu-links"
+                      className="menu-links ml-1"
                     >
                       <LinkContainer to="/admin/userlist">
                         <NavDropdown.Item>

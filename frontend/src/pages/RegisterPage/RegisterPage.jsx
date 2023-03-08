@@ -13,6 +13,7 @@ import PasswordRequirements from "../../components/PasswordRequirements/Password
 import "./registerPage.css";
 
 const RegisterPage = ({ location, history }) => {
+  window.scrollTo(0, 0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

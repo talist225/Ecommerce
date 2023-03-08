@@ -26,7 +26,7 @@ import {
   USER_UPDATE_SUCCESS,
 } from "../constants/userConstants";
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 export const login = (email, password) => async (dispatch) => {
   try {

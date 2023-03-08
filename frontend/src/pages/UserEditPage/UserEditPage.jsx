@@ -10,6 +10,7 @@ import { USER_UPDATE_RESET } from "../../constants/userConstants";
 import toast from "react-hot-toast";
 
 const UserEditPage = ({ match, history }) => {
+  window.scrollTo(0, 0);
   const userId = match.params.id;
 
   const [name, setName] = useState("");

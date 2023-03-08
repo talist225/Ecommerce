@@ -2,6 +2,7 @@ import React from "react";
 import "./aboutPage.css";
 
 const AboutPage = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <center className="text-center about">

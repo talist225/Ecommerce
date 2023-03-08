@@ -15,6 +15,7 @@ import "./cartPage.css";
 import { toast } from "react-hot-toast";
 
 const CartPage = ({ match, location, history }) => {
+  window.scrollTo(0, 0);
   const productId = match.params.id;
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
   const dispatch = useDispatch();

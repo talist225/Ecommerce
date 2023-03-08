@@ -2,6 +2,7 @@ import React from "react";
 import "./termAndCon.css";
 
 const TermAndCon = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <section className="term-wrapper py-5 mt-5">
