@@ -9,7 +9,7 @@ import FormContainer from "../../components/FormContainer/FormContainer";
 import loginSchema from "../../validation/login.validation";
 import validate from "../../validation/validation";
 import "./loginPage.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const LoginPage = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -51,18 +51,11 @@ const LoginPage = ({ location, history }) => {
             errorMsgs += "משהו השתבש";
             break;
         }
-        toast.error(errorMsgs, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error(errorMsgs);
         return;
       }
     }
+
     dispatch(login(email, password));
   };
 

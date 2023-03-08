@@ -11,7 +11,6 @@ const Product = ({ product, match, history }) => {
         <Card.Img src={product.image} variant="top" />
         <span>
           {product.countInStock > 0 ? null : (
-            // <span className="stock-span">אזל</span>
             <Image src="../images/out-of-stock.png" className="stock-image" />
           )}
         </span>

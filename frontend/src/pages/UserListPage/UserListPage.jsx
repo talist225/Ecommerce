@@ -6,6 +6,7 @@ import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
 import { listUsers, deleteUser } from "../../actions/userActions";
 import "./userListPage.css";
+import { toast } from "react-hot-toast";
 
 const UserListPage = ({ history }) => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const UserListPage = ({ history }) => {
   const deleteHandler = (id) => {
     if (window.confirm("האם אתה בטוח שברצונך למחוק משתמש זה?")) {
       dispatch(deleteUser(id));
+      toast.success("המשתמש נמחק בהצלחה");
     }
   };
 

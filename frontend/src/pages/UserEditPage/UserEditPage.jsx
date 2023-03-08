@@ -7,6 +7,7 @@ import Loader from "../../components/Loader/Loader";
 import FormContainer from "../../components/FormContainer/FormContainer";
 import { getUserDetails, updateUser } from "../../actions/userActions";
 import { USER_UPDATE_RESET } from "../../constants/userConstants";
+import toast from "react-hot-toast";
 
 const UserEditPage = ({ match, history }) => {
   const userId = match.params.id;
@@ -45,6 +46,7 @@ const UserEditPage = ({ match, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(updateUser({ _id: userId, name, email, isAdmin }));
+    toast.success("הפרטים עודכנו בהצלחה");
   };
 
   return (

@@ -18,7 +18,7 @@ import UserEditPage from "./pages/UserEditPage/UserEditPage";
 import ProductListPage from "./pages/ProductListPage/ProductListPage";
 import ProductEditPage from "./pages/ProductEditPage/ProductEditPage";
 import OrderListPage from "./pages/OrderListPage/OrderListPage";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
 import ShippingPolicy from "./pages/ShippingPolicy/ShippingPolicy";
@@ -30,12 +30,21 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 const App = () => {
   return (
     <Router>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        closeOnClick
-        pauseOnHover={false}
-        theme="light"
+      <Toaster
+        toastOptions={{
+          style: {
+            border: "1px solid black",
+          },
+          position: "center",
+          duration: 3000,
+        }}
+        containerStyle={{
+          top: 20,
+          left: 20,
+          bottom: 20,
+          right: 20,
+        }}
+        gutter={24}
       />
       <Header />
       <main className="py-3">

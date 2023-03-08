@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../../actions/cartActions";
 import "./cartPage.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;

@@ -6,7 +6,7 @@ import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../actions/orderActions";
 import "./placeOrder.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const PlaceOrderPage = ({ history }) => {
   const dispatch = useDispatch();

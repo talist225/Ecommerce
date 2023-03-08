@@ -20,7 +20,7 @@ import {
 import { PRODUCT_CREATE_REVIEW_RESET } from "../../constants/productConstants";
 import Meta from "../../components/Meta/Meta";
 import "./productPage.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const ProductPage = ({ history, match }) => {
   const [qty, setQty] = useState(1);
@@ -52,7 +52,9 @@ const ProductPage = ({ history, match }) => {
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
-    toast.success("המוצר נוסף לעגלה");
+    toast.success("המוצר נוסף לעגלה", {
+      icon: "🛒",
+    });
   };
 
   const submitHandler = (e) => {

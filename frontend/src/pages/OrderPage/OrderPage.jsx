@@ -16,7 +16,7 @@ import {
   ORDER_DELIVER_RESET,
 } from "../../constants/orderConstants";
 import "./orderPage.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const OrderPage = ({ match, history }) => {
   const orderId = match.params.id;

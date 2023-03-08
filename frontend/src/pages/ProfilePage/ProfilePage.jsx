@@ -8,7 +8,7 @@ import { listMyOrders } from "../../actions/orderActions";
 import { LinkContainer } from "react-router-bootstrap";
 import { USER_UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import "./profilePage.css";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const ProfilePage = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -50,12 +50,13 @@ const ProfilePage = ({ location, history }) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setMessage("סיסמא לא תואמת");
+      toast.error("סיסמא לא תואמת");
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
+      toast.success("הפרטים עודכנו בהצלחה");
     }
     setPassword("");
     setConfirmPassword("");
-    toast.success("הפרטים עודכנו בהצלחה");
   };
 
   return (

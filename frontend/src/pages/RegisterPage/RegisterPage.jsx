@@ -8,7 +8,7 @@ import { register } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer/FormContainer";
 import registerSchema from "../../validation/register.validation";
 import validate from "../../validation/validation";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import PasswordRequirements from "../../components/PasswordRequirements/PasswordRequirements";
 import "./registerPage.css";
 
@@ -68,20 +68,12 @@ const RegisterPage = ({ location, history }) => {
             errorMsgs += "יש למלא את כל הפרטים";
             break;
         }
-        toast.error(errorMsgs, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        toast.error(errorMsgs);
         return;
       }
     }
     if (password !== confirmPassword) {
-      setMessage("סיסמא לא תואמת");
+      toast.error("סיסמא לא תואמת");
     } else {
       dispatch(register(name, email, password));
     }

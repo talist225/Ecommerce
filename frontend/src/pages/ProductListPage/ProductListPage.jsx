@@ -11,7 +11,7 @@ import {
   createProduct,
 } from "../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../constants/productConstants";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import "./productListPage.css";
 
 const ProductListPage = ({ history, match }) => {
