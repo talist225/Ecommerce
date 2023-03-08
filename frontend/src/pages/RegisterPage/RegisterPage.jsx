@@ -103,9 +103,7 @@ const RegisterPage = ({ location, history }) => {
     if (e.key !== "Shift") {
       const { value } = e.target;
       const capsLetterCheck = /[A-Z]/.test(value);
-      const numberCheck = /^(?=(?:\D*\d){4})\b(?:\d\w*\d\w*|\d{4}\w*)+\b$/.test(
-        value
-      );
+      const numberCheck = /(?:\D*\d){4,}/.test(value);
       const pwdLengthCheck = value.length > 8;
       const specialCharCheck = /[!@#$%^&*_-]/.test(value);
       setChecks({

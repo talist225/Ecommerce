@@ -8,6 +8,7 @@ import { listMyOrders } from "../../actions/orderActions";
 import { LinkContainer } from "react-router-bootstrap";
 import { USER_UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import "./profilePage.css";
+import { toast } from "react-toastify";
 
 const ProfilePage = ({ location, history }) => {
   const [name, setName] = useState("");
@@ -54,6 +55,7 @@ const ProfilePage = ({ location, history }) => {
     }
     setPassword("");
     setConfirmPassword("");
+    toast.success("הפרטים עודכנו בהצלחה");
   };
 
   return (

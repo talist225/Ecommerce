@@ -40,8 +40,6 @@ const Footer = () => {
         <div className="container m-auto">
           <div className="row">
             <div className="col-sm-3  footer-logo">
-              {/* <h1 className="text-white">טל-פון</h1>
-              <h3 className="text-white">חנות אונליין</h3> */}
               <Image
                 src="images/tal-phone2.png"
                 alt="טל-פון"

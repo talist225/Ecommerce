@@ -22,11 +22,11 @@
 }
 
 .menu-links:hover {
-  color: var(--third-color) !important;
+  color: var(--seventh-color) !important;
 }
 
 .navbar .nav-link i {
-  color: var(--third-color);
+  color: var(--seventh-color);
   font-size: 18px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .dropdown-item.active {
-  background-color: var(--third-color) !important;
+  background-color: var(--seventh-color) !important;
 }
 
 .dropdown-menu {
@@ -67,7 +67,7 @@
 }
 
 .header-bottom a:hover {
-  color: #febd69;
+  color: var(--seventh-color);
 }
 
 navbar-toggler {
@@ -76,7 +76,7 @@ navbar-toggler {
 
 .navbar-toggler-icon,
 .navbar-toggler {
-  background: var(--third-color);
+  background: var(--seventh-color);
   font-size: 20px;
   border-radius: 5px;
   margin: 0;

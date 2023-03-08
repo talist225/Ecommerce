@@ -17,7 +17,7 @@
 }
 
 button:hover:active {
-  background-color: var(--third-color);
+  background-color: var(--seventh-color);
   color: black;
 }
 
@@ -38,7 +38,8 @@ button:hover:active {
 }
 
 .search-icon:hover {
-  background-color: var(--third-color) !important;
+  background-color: var(--seventh-color) !important;
+  color: white;
 }
 
 .search-box {
