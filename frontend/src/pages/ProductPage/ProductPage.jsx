@@ -70,7 +70,7 @@ const ProductPage = ({ history, match }) => {
 
   return (
     <>
-      <div dir="rtl" className="d-flex justify-content-start">
+      <div dir="rtl" className="d-flex justify-content-start product-page">
         <button
           className="btn btn-light my-3"
           onClick={() => {

@@ -112,7 +112,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="py-4">
+      <footer className="py-3">
         <div className="container m-auto">
           <div className="row">
             <div className="col-sm-12">

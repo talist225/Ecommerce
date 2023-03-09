@@ -1,3 +1,9 @@
 .row .left-card {
   height: 40vh;
 }
+
+@media only screen and (max-width: 1024px) {
+  .product-page {
+    margin-top: 8rem !important;
+  }
+}
