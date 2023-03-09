@@ -25,13 +25,12 @@ const ProductCarousel = () => {
     <Carousel fade pause="hover" className="mt-4">
       {products.map((product) => (
         <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
+          <Link to={`/product/${product._id}`} className="product-details">
             <Image src={product.image} alt={product.name} />
             <Carousel.Caption className="carousel-caption">
               <h4>{product.name}</h4>
               <h5>₪{product.price}</h5>
             </Carousel.Caption>
-
             <span aria-hidden="true" className="carousel-control-next-icon" />
           </Link>
         </Carousel.Item>
