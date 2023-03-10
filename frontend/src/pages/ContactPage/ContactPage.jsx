@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <>
       <h1 className="text-center contact-title">צרו קשר</h1>
-      <div className="col-sm-12">
+      <div className="col-sm-12 contact-info">
         <div className="text-center mt-5">זמינים באמצעי המדיה הבאים:</div>
         <div className="contact-icons d-flex align-items-center justify-content-center gap-30 mt-5">
           <a href="http://wa.me/972543034877">

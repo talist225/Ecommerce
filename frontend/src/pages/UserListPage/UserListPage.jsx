@@ -69,7 +69,7 @@ const UserListPage = ({ history }) => {
                     <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}
                 </td>
-                <td>
+                <td className="d-flex justify-content-around">
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant="light" className="btn-sm">
                       <i className="fas fa-edit"></i>

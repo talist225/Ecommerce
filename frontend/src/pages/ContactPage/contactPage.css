@@ -19,6 +19,11 @@
   transform: scale(1.2);
 }
 
+.contact-info:nth-child(2) {
+  font-weight: 500 !important;
+  font-size: 20px;
+}
+
 .contact-mail a {
   display: flex !important;
   justify-content: center !important;

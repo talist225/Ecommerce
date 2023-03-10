@@ -110,7 +110,7 @@ const ProductListPage = ({ history, match }) => {
                   <td>₪{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
-                  <td>
+                  <td className="d-flex justify-content-around">
                     <LinkContainer to={`/admin/product/${product._id}/edit`}>
                       <Button variant="light" className="btn-sm">
                         <i className="fas fa-edit"></i>
