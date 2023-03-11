@@ -1,6 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import "./paginate.css";
 
 const Paginate = ({ pages, page, isAdmin = false, keyword = "" }) => {
   return (
@@ -17,7 +18,7 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = "" }) => {
                 : `/admin/productlist/${x + 1}`
             }
           >
-            <Pagination.Item>{x + 1}</Pagination.Item>
+            <Pagination.Item dir="ltr">{x + 1}</Pagination.Item>
           </LinkContainer>
         ))}
       </Pagination>

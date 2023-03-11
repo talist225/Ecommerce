@@ -3,18 +3,38 @@
   height: 90%;
   object-fit: contain;
   row-gap: 3rem !important;
+  transition: 0.1s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
 }
 
 .card span {
   font-weight: bold;
 }
 
+.product-card .main-img {
+  max-width: 200px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  margin: auto;
+}
+
 .stock-image {
   position: absolute;
-  width: 25%;
+  width: 22%;
   top: 1%;
   right: 2%;
   padding: 5px;
+}
+
+.main-img,
+.card-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @media only screen and (max-width: 1024px) {
