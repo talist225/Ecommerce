@@ -10,6 +10,7 @@ import loginSchema from "../../validation/login.validation";
 import validate from "../../validation/validation";
 import "./loginPage.css";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const LoginPage = ({ location, history }) => {
   window.scrollTo(0, 0);
@@ -60,46 +61,50 @@ const LoginPage = ({ location, history }) => {
   };
 
   return (
-    <FormContainer>
-      <h1 className="login-title text-center">התחברות</h1>
-      {error && <Message variant="danger">{error}</Message>}
-      {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
-        <Form.Group controlId="email" className="text-center mt-5">
-          <Form.Label>אימייל</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="אימייל"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-        <Form.Group controlId="password" className="text-center mt-3">
-          <Form.Label>סיסמא</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="סיסמא"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-        <Button
-          type="submit"
-          variant="primary"
-          className="mt-4 login-btn m-0 w-100"
-        >
-          התחברות
-        </Button>
-      </Form>
+    <Fade bottom>
+      <FormContainer>
+        <h1 className="login-title text-center">התחברות</h1>
+        {error && <Message variant="danger">{error}</Message>}
+        {loading && <Loader />}
+        <Form onSubmit={submitHandler}>
+          <Form.Group controlId="email" className="text-center mt-5">
+            <Form.Label>אימייל</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="אימייל"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
+          <Form.Group controlId="password" className="text-center mt-3">
+            <Form.Label>סיסמא</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="סיסמא"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
+          <Button
+            type="submit"
+            variant="primary"
+            className="mt-4 login-btn m-0 w-100"
+          >
+            התחברות
+          </Button>
+        </Form>
 
-      <Row className="py-3">
-        <Col className="text-center">
-          <Link to={redirect ? `/register?redirect=${redirect}` : `/register`}>
-            יצירת חשבון חדש
-          </Link>
-        </Col>
-      </Row>
-    </FormContainer>
+        <Row className="py-3">
+          <Col className="text-center">
+            <Link
+              to={redirect ? `/register?redirect=${redirect}` : `/register`}
+            >
+              יצירת חשבון חדש
+            </Link>
+          </Col>
+        </Row>
+      </FormContainer>
+    </Fade>
   );
 };
 

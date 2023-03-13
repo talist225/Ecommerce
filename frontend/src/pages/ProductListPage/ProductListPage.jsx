@@ -12,6 +12,7 @@ import {
 } from "../../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../../constants/productConstants";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 import "./productListPage.css";
 
 const ProductListPage = ({ history, match }) => {
@@ -92,43 +93,45 @@ const ProductListPage = ({ history, match }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
-          <Table striped bordered hover responsive className="table-sm">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>שם</th>
-                <th>מחיר</th>
-                <th>קטגוריה</th>
-                <th>מותג</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr key={product._id}>
-                  <td>{product._id}</td>
-                  <td>{product.name}</td>
-                  <td>₪{product.price}</td>
-                  <td>{product.category}</td>
-                  <td>{product.brand}</td>
-                  <td className="d-flex justify-content-around">
-                    <LinkContainer to={`/admin/product/${product._id}/edit`}>
-                      <Button variant="light" className="btn-sm">
-                        <i className="fas fa-edit"></i>
-                      </Button>
-                    </LinkContainer>
-                    <Button
-                      variant="danger"
-                      className="btn-sm"
-                      onClick={() => deleteHandler(product._id)}
-                    >
-                      <i className="fas fa-trash"></i>
-                    </Button>
-                  </td>
+          <Fade bottom>
+            <Table striped bordered hover responsive className="table-sm">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>שם</th>
+                  <th>מחיר</th>
+                  <th>קטגוריה</th>
+                  <th>מותג</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-          <Paginate pages={pages} page={page} isAdmin={true} />
+              </thead>
+              <tbody>
+                {products.map((product) => (
+                  <tr key={product._id}>
+                    <td>{product._id}</td>
+                    <td>{product.name}</td>
+                    <td>₪{product.price}</td>
+                    <td>{product.category}</td>
+                    <td>{product.brand}</td>
+                    <td className="d-flex justify-content-around">
+                      <LinkContainer to={`/admin/product/${product._id}/edit`}>
+                        <Button variant="light" className="btn-sm">
+                          <i className="fas fa-edit"></i>
+                        </Button>
+                      </LinkContainer>
+                      <Button
+                        variant="danger"
+                        className="btn-sm"
+                        onClick={() => deleteHandler(product._id)}
+                      >
+                        <i className="fas fa-trash"></i>
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+            <Paginate pages={pages} page={page} isAdmin={true} />
+          </Fade>
         </>
       )}
     </>

@@ -6,6 +6,7 @@ import Message from "../Message/Message";
 import { listTopProducts } from "../../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import "./productCarousel.css";
+import Fade from "react-reveal/Fade";
 
 const ProductCarousel = () => {
   const dispatch = useDispatch();
@@ -22,20 +23,22 @@ const ProductCarousel = () => {
   ) : error ? (
     <Message variant="danger">{error}</Message>
   ) : (
-    <Carousel fade pause="hover" className="mt-4">
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`} className="product-details">
-            <Image src={product.image} alt={product.name} />
-            <Carousel.Caption className="carousel-caption">
-              <h4>{product.name}</h4>
-              <h5>₪{product.price}</h5>
-            </Carousel.Caption>
-            <span aria-hidden="true" className="carousel-control-next-icon" />
-          </Link>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <Fade bottom>
+      <Carousel fade pause="hover" className="mt-4">
+        {products.map((product) => (
+          <Carousel.Item key={product._id}>
+            <Link to={`/product/${product._id}`} className="product-details">
+              <Image src={product.image} alt={product.name} />
+              <Carousel.Caption className="carousel-caption">
+                <h4>{product.name}</h4>
+                <h5>₪{product.price}</h5>
+              </Carousel.Caption>
+              <span aria-hidden="true" className="carousel-control-next-icon" />
+            </Link>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </Fade>
   );
 };
 

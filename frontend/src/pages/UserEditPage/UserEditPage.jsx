@@ -8,6 +8,7 @@ import FormContainer from "../../components/FormContainer/FormContainer";
 import { getUserDetails, updateUser } from "../../actions/userActions";
 import { USER_UPDATE_RESET } from "../../constants/userConstants";
 import toast from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const UserEditPage = ({ match, history }) => {
   window.scrollTo(0, 0);
@@ -52,59 +53,61 @@ const UserEditPage = ({ match, history }) => {
 
   return (
     <>
-      <Link to="/admin/userlist" className="btn btn-light my-3">
-        חזור
-      </Link>
-      <FormContainer>
-        <h1>עריכת פרטי משתמש</h1>
-        {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name">
-              <Form.Label>שם</Form.Label>
-              <Form.Control
-                type="name"
-                placeholder="שם"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+      <Fade bottom>
+        <Link to="/admin/userlist" className="btn btn-light my-3">
+          חזור
+        </Link>
+        <FormContainer>
+          <h1>עריכת פרטי משתמש</h1>
+          {loadingUpdate && <Loader />}
+          {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant="danger">{error}</Message>
+          ) : (
+            <Form onSubmit={submitHandler}>
+              <Form.Group controlId="name">
+                <Form.Label>שם</Form.Label>
+                <Form.Control
+                  type="name"
+                  placeholder="שם"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="email">
-              <Form.Label>אימייל</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="אימייל"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="email">
+                <Form.Label>אימייל</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="אימייל"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="isadmin">
-              <Form.Check
-                type="checkbox"
-                label=" &nbsp;&nbsp;&nbsp;&nbsp;הגדרת משתמש זה כמנהל"
-                checked={isAdmin}
-                onChange={(e) => setIsAdmin(e.target.checked)}
-                className="mt-4 text-center"
-              ></Form.Check>
-            </Form.Group>
+              <Form.Group controlId="isadmin">
+                <Form.Check
+                  type="checkbox"
+                  label=" &nbsp;&nbsp;&nbsp;&nbsp;הגדרת משתמש זה כמנהל"
+                  checked={isAdmin}
+                  onChange={(e) => setIsAdmin(e.target.checked)}
+                  className="mt-4 text-center"
+                ></Form.Check>
+              </Form.Group>
 
-            <Button
-              type="submit"
-              variant="primary"
-              className="mt-4 w-100 text-center"
-            >
-              עדכן
-            </Button>
-          </Form>
-        )}
-      </FormContainer>
+              <Button
+                type="submit"
+                variant="primary"
+                className="mt-4 w-100 text-center"
+              >
+                עדכן
+              </Button>
+            </Form>
+          )}
+        </FormContainer>
+      </Fade>
     </>
   );
 };

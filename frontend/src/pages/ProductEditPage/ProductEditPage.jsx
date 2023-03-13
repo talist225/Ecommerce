@@ -12,6 +12,7 @@ import {
 import { PRODUCT_UPDATE_RESET } from "../../constants/productConstants";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const ProductEditPage = ({ match, history }) => {
   const productId = match.params.id;
@@ -95,107 +96,109 @@ const ProductEditPage = ({ match, history }) => {
 
   return (
     <>
-      <Link to="/admin/productlist" className="btn btn-light my-3">
-        חזור
-      </Link>
-      <FormContainer>
-        <h1>עריכת פרטי מוצרים</h1>
-        {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-          <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name">
-              <Form.Label>שם</Form.Label>
-              <Form.Control
-                type="name"
-                placeholder="שם"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+      <Fade bottom>
+        <Link to="/admin/productlist" className="btn btn-light my-3">
+          חזור
+        </Link>
+        <FormContainer>
+          <h1>עריכת פרטי מוצרים</h1>
+          {loadingUpdate && <Loader />}
+          {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant="danger">{error}</Message>
+          ) : (
+            <Form onSubmit={submitHandler}>
+              <Form.Group controlId="name">
+                <Form.Label>שם</Form.Label>
+                <Form.Control
+                  type="name"
+                  placeholder="שם"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="price">
-              <Form.Label>מחיר</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="מחיר"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="price">
+                <Form.Label>מחיר</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="מחיר"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="image">
-              <Form.Label>תמונת מוצר - יש לשים קישור או קובץ</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="תמונה"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              ></Form.Control>
-              <Form.Control
-                type="file"
-                id="image-file"
-                label="בחר קובץ"
-                custom
-                onChange={uploadFileHandler}
-              ></Form.Control>
-              {uploading && <Loader />}
-            </Form.Group>
+              <Form.Group controlId="image">
+                <Form.Label>תמונת מוצר - יש לשים קישור או קובץ</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="תמונה"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                ></Form.Control>
+                <Form.Control
+                  type="file"
+                  id="image-file"
+                  label="בחר קובץ"
+                  custom
+                  onChange={uploadFileHandler}
+                ></Form.Control>
+                {uploading && <Loader />}
+              </Form.Group>
 
-            <Form.Group controlId="brand">
-              <Form.Label>מותג (חברה)</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="מותג (חברה)"
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="brand">
+                <Form.Label>מותג (חברה)</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="מותג (חברה)"
+                  value={brand}
+                  onChange={(e) => setBrand(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="countInStock">
-              <Form.Label>מלאי מוצר</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="מלאי מוצר"
-                value={countInStock}
-                onChange={(e) => setCountInStock(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="countInStock">
+                <Form.Label>מלאי מוצר</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="מלאי מוצר"
+                  value={countInStock}
+                  onChange={(e) => setCountInStock(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="category">
-              <Form.Label>קטגוריית מוצר</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="קטגוריית מוצר"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="category">
+                <Form.Label>קטגוריית מוצר</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="קטגוריית מוצר"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Form.Group controlId="description">
-              <Form.Label>תיאור מוצר</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="תיאור מוצר"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
+              <Form.Group controlId="description">
+                <Form.Label>תיאור מוצר</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="תיאור מוצר"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-            <Button
-              type="submit"
-              variant="primary"
-              className="mt-4 w-100 text-center"
-            >
-              עדכן
-            </Button>
-          </Form>
-        )}
-      </FormContainer>
+              <Button
+                type="submit"
+                variant="primary"
+                className="mt-4 w-100 text-center"
+              >
+                עדכן
+              </Button>
+            </Form>
+          )}
+        </FormContainer>
+      </Fade>
     </>
   );
 };

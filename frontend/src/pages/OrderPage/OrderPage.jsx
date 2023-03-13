@@ -17,6 +17,7 @@ import {
 } from "../../constants/orderConstants";
 import "./orderPage.css";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const OrderPage = ({ match, history }) => {
   window.scrollTo(0, 0);
@@ -93,146 +94,148 @@ const OrderPage = ({ match, history }) => {
     <Message variant="danger">{error}</Message>
   ) : (
     <>
-      <h2 className="ordernum">הזמנה מספר {order._id} &nbsp;</h2>
-      <Row>
-        <Col md={8}>
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <h2>משלוח</h2>
-              <p>
-                {" "}
-                <strong>שם: </strong> {order.user.name}
-              </p>
-              <p>
-                <strong>אימייל: </strong>{" "}
-                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
-              </p>
-              <p>
-                <strong>כתובת: </strong>
-                {order.shippingAddress.address}, {order.shippingAddress.city},{" "}
-                {order.shippingAddress.postalCode},{" "}
-                {order.shippingAddress.country}
-              </p>
-              {order.isDelivered ? (
-                <Message variant="success">נשלח ב{order.deliveredAt}</Message>
-              ) : (
-                <Message variant="danger">לא נשלח</Message>
-              )}
-            </ListGroup.Item>
-
-            <ListGroup.Item>
-              <h2>אמצעי תשלום</h2>
-              <p>
-                <strong>תשלום באמצעות: </strong>
-                {order.paymentMethod}
-              </p>
-              {order.isPaid ? (
-                <Message variant="success">שולם ב- {order.paidAt}</Message>
-              ) : (
-                <Message variant="danger">לא בוצע תשלום</Message>
-              )}
-            </ListGroup.Item>
-
-            <ListGroup.Item>
-              <h2>מוצרים:</h2>
-              {order.orderItems.length === 0 ? (
-                <Message>עגלת המוצרים שלך ריקה</Message>
-              ) : (
-                <ListGroup variant="flush">
-                  {order.orderItems.map((item, index) => (
-                    <ListGroup.Item key={index}>
-                      <Row>
-                        <Col md={2}>
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            fluid
-                            rounded
-                          ></Image>
-                        </Col>
-                        <Col>
-                          <Link to={`/product/${item.product}`}>
-                            {item.name}
-                          </Link>
-                        </Col>
-                        <Col md={4}>
-                          x{item.qty} ₪{item.price} = ₪{item.qty * item.price}
-                        </Col>
-                      </Row>
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              )}
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-
-        <Col md={4}>
-          <Card>
+      <Fade bottom>
+        <h2 className="ordernum">הזמנה מספר {order._id} &nbsp;</h2>
+        <Row>
+          <Col md={8}>
             <ListGroup variant="flush">
               <ListGroup.Item>
-                <h2>סיכום הזמנה</h2>
+                <h2>משלוח</h2>
+                <p>
+                  {" "}
+                  <strong>שם: </strong> {order.user.name}
+                </p>
+                <p>
+                  <strong>אימייל: </strong>{" "}
+                  <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+                </p>
+                <p>
+                  <strong>כתובת: </strong>
+                  {order.shippingAddress.address}, {order.shippingAddress.city},{" "}
+                  {order.shippingAddress.postalCode},{" "}
+                  {order.shippingAddress.country}
+                </p>
+                {order.isDelivered ? (
+                  <Message variant="success">נשלח ב{order.deliveredAt}</Message>
+                ) : (
+                  <Message variant="danger">לא נשלח</Message>
+                )}
               </ListGroup.Item>
 
               <ListGroup.Item>
-                <Row>
-                  <Col>מוצרים</Col>
-                  <Col>₪{order.itemsPrice}</Col>
-                </Row>
+                <h2>אמצעי תשלום</h2>
+                <p>
+                  <strong>תשלום באמצעות: </strong>
+                  {order.paymentMethod}
+                </p>
+                {order.isPaid ? (
+                  <Message variant="success">שולם ב- {order.paidAt}</Message>
+                ) : (
+                  <Message variant="danger">לא בוצע תשלום</Message>
+                )}
               </ListGroup.Item>
 
               <ListGroup.Item>
-                <Row>
-                  <Col>משלוח</Col>
-                  <Col>₪{order.shippingPrice}</Col>
-                </Row>
+                <h2>מוצרים:</h2>
+                {order.orderItems.length === 0 ? (
+                  <Message>עגלת המוצרים שלך ריקה</Message>
+                ) : (
+                  <ListGroup variant="flush">
+                    {order.orderItems.map((item, index) => (
+                      <ListGroup.Item key={index}>
+                        <Row>
+                          <Col md={2}>
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fluid
+                              rounded
+                            ></Image>
+                          </Col>
+                          <Col>
+                            <Link to={`/product/${item.product}`}>
+                              {item.name}
+                            </Link>
+                          </Col>
+                          <Col md={4}>
+                            x{item.qty} ₪{item.price} = ₪{item.qty * item.price}
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                    ))}
+                  </ListGroup>
+                )}
               </ListGroup.Item>
+            </ListGroup>
+          </Col>
 
-              <ListGroup.Item>
-                <Row>
-                  <Col>מס</Col>
-                  <Col>₪{order.taxPrice}</Col>
-                </Row>
-              </ListGroup.Item>
-
-              <ListGroup.Item>
-                <Row>
-                  <Col>סה"כ</Col>
-                  <Col>₪{order.totalPrice}</Col>
-                </Row>
-              </ListGroup.Item>
-              {!order.isPaid && (
+          <Col md={4}>
+            <Card>
+              <ListGroup variant="flush">
                 <ListGroup.Item>
-                  {loadingPay && <Loader />}
-                  {!sdkReady ? (
-                    <Loader />
-                  ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      onSuccess={successPaymentHandler}
-                    />
-                  )}
+                  <h2>סיכום הזמנה</h2>
                 </ListGroup.Item>
-              )}
-              {loadingDeliver && <Loader />}
-              {userInfo &&
-                userInfo.isAdmin &&
-                order.isPaid &&
-                !order.isDelivered && (
+
+                <ListGroup.Item>
+                  <Row>
+                    <Col>מוצרים</Col>
+                    <Col>₪{order.itemsPrice}</Col>
+                  </Row>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                  <Row>
+                    <Col>משלוח</Col>
+                    <Col>₪{order.shippingPrice}</Col>
+                  </Row>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                  <Row>
+                    <Col>מס</Col>
+                    <Col>₪{order.taxPrice}</Col>
+                  </Row>
+                </ListGroup.Item>
+
+                <ListGroup.Item>
+                  <Row>
+                    <Col>סה"כ</Col>
+                    <Col>₪{order.totalPrice}</Col>
+                  </Row>
+                </ListGroup.Item>
+                {!order.isPaid && (
                   <ListGroup.Item>
-                    <Button
-                      type="button"
-                      className="btn btn-block"
-                      onClick={deliverHandler}
-                    >
-                      סימון משלוח כנשלח
-                    </Button>
+                    {loadingPay && <Loader />}
+                    {!sdkReady ? (
+                      <Loader />
+                    ) : (
+                      <PayPalButton
+                        amount={order.totalPrice}
+                        onSuccess={successPaymentHandler}
+                      />
+                    )}
                   </ListGroup.Item>
                 )}
-            </ListGroup>
-          </Card>
-        </Col>
-      </Row>
+                {loadingDeliver && <Loader />}
+                {userInfo &&
+                  userInfo.isAdmin &&
+                  order.isPaid &&
+                  !order.isDelivered && (
+                    <ListGroup.Item>
+                      <Button
+                        type="button"
+                        className="btn btn-block"
+                        onClick={deliverHandler}
+                      >
+                        סימון משלוח כנשלח
+                      </Button>
+                    </ListGroup.Item>
+                  )}
+              </ListGroup>
+            </Card>
+          </Col>
+        </Row>
+      </Fade>
     </>
   );
 };

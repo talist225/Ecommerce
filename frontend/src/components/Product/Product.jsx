@@ -1,10 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card, Image } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import { Button, Card, Image } from "react-bootstrap";
 import Rating from "../Rating/Rating";
 import "./product.css";
+import { toast } from "react-hot-toast";
 
-const Product = ({ product, match, history }) => {
+const Product = ({ product, match }) => {
+  const history = useHistory();
+  const addToCartHandler = (id) => () => {
+    history.push(`/cart/${id}?qty=${1}`);
+    toast.success("המוצר נוסף לעגלה", {
+      icon: "🛒",
+    });
+  };
+
   return (
     <Card className="my-3 p-3 rounded text-center product-card">
       <Link to={`/product/${product._id}`}>
@@ -33,6 +42,15 @@ const Product = ({ product, match, history }) => {
           ₪{product.price}
         </Card.Text>
       </Card.Body>
+      <Button
+        onClick={addToCartHandler(product._id)}
+        className="btn-block text-center"
+        type="button"
+        disabled={product.countInStock === 0}
+      >
+        הוסף לעגלה &nbsp;
+        <i className="fa-solid fa-cart-plus"></i>
+      </Button>
     </Card>
   );
 };

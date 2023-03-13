@@ -37,5 +37,10 @@
   flex-direction: column;
 }
 
+.product-card button i {
+  color: white;
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 1024px) {
 }

@@ -10,6 +10,7 @@ import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 import { listProducts } from "../../actions/productActions";
 import { Link } from "react-router-dom";
 import MarqueeSlide from "../../components/Marquee/MarqueeSlide";
+import Fade from "react-reveal/Fade";
 
 const HomePage = ({ match }) => {
   window.scrollTo(0, 0);
@@ -36,27 +37,29 @@ const HomePage = ({ match }) => {
           חזור
         </Link>
       )}
-      <h1 className="mt-5 text-center">המוצרים שלנו</h1>
-      {loading ? (
-        <Loader />
-      ) : error ? (
-        <Message variant="danger">{error}</Message>
-      ) : (
-        <>
-          <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-          <Paginate
-            pages={pages}
-            page={page}
-            keyword={keyword ? keyword : ""}
-          />
-        </>
-      )}
+      <Fade bottom>
+        <h1 className="mt-5 text-center">המוצרים שלנו</h1>
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <Message variant="danger">{error}</Message>
+        ) : (
+          <>
+            <Row>
+              {products.map((product) => (
+                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Product product={product} />
+                </Col>
+              ))}
+            </Row>
+            <Paginate
+              pages={pages}
+              page={page}
+              keyword={keyword ? keyword : ""}
+            />
+          </>
+        )}
+      </Fade>
       <MarqueeSlide />
     </>
   );

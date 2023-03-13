@@ -9,6 +9,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { USER_UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import "./profilePage.css";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const ProfilePage = ({ location, history }) => {
   window.scrollTo(0, 0);
@@ -61,115 +62,123 @@ const ProfilePage = ({ location, history }) => {
   };
 
   return (
-    <Row>
-      <Col md={3}>
-        <h2 className="profile-title">הפרופיל שלי</h2>
-        {message && <Message variant="danger">{message}</Message>}
-        {error && <Message variant="danger">{error}</Message>}
-        {success && <Message variant="success">הפרופיל עודכן בהצלחה</Message>}
-        {loading && <Loader />}
-        <Form onSubmit={submitHandler}>
-          <Form.Group controlId="name">
-            <Form.Label>שם</Form.Label>
-            <Form.Control
-              type="name"
-              placeholder="שם"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+    <Fade bottom>
+      <Row>
+        <Col md={3}>
+          <h2 className="profile-title">הפרופיל שלי</h2>
+          {message && <Message variant="danger">{message}</Message>}
+          {error && <Message variant="danger">{error}</Message>}
+          {success && <Message variant="success">הפרופיל עודכן בהצלחה</Message>}
+          {loading && <Loader />}
+          <Form onSubmit={submitHandler}>
+            <Form.Group controlId="name">
+              <Form.Label>שם</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="שם"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-          <Form.Group controlId="email">
-            <Form.Label>אימייל</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="אימייל"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>אימייל</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="אימייל"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-          <Form.Group controlId="password">
-            <Form.Label>סיסמא</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="סיסמא"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>סיסמא</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="סיסמא"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-          <Form.Group controlId="confirmPassword">
-            <Form.Label>אישור סיסמא</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="אישור סיסמא"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+            <Form.Group controlId="confirmPassword">
+              <Form.Label>אישור סיסמא</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="אישור סיסמא"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
 
-          <Button
-            type="submit"
-            variant="primary"
-            className="mt-4 w-100 update-profile-btn"
-          >
-            עדכון
-          </Button>
-        </Form>
-      </Col>
-      <Col md={9}>
-        <h2 className="my-orders">ההזמנות שלי</h2>
-        {loadingOrders ? (
-          <Loader />
-        ) : errorOrders ? (
-          <Message variant="danger">{errorOrders}</Message>
-        ) : (
-          <Table striped bordered hover responsive className="table-sm mt-4">
-            <thead>
-              <tr>
-                <th>מספר מזהה הזמנה</th>
-                <th>תאריך</th>
-                <th>סה"כ</th>
-                <th>שולם</th>
-                <th>נשלח</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((order) => (
-                <tr key={order._id}>
-                  <td>{order._id}</td>
-                  <td>{order.createdAt.substring(0, 10)}</td>
-                  <td>{order.totalPrice}</td>
-                  <td>
-                    {order.isPaid ? (
-                      order.paidAt.substring(0, 10)
-                    ) : (
-                      <i className="fas fa-times" style={{ color: "red" }}></i>
-                    )}
-                  </td>
-                  <td>
-                    {order.isDelivered ? (
-                      order.deliveredAt.substring(0, 10)
-                    ) : (
-                      <i className="fas fa-times" style={{ color: "red" }}></i>
-                    )}
-                  </td>
-                  <td>
-                    <LinkContainer to={`/order/${order._id}`}>
-                      <Button className="btn-sm" variant="light">
-                        פרטים
-                      </Button>
-                    </LinkContainer>
-                  </td>
+            <Button
+              type="submit"
+              variant="primary"
+              className="mt-4 w-100 update-profile-btn"
+            >
+              עדכון
+            </Button>
+          </Form>
+        </Col>
+        <Col md={9}>
+          <h2 className="my-orders">ההזמנות שלי</h2>
+          {loadingOrders ? (
+            <Loader />
+          ) : errorOrders ? (
+            <Message variant="danger">{errorOrders}</Message>
+          ) : (
+            <Table striped bordered hover responsive className="table-sm mt-4">
+              <thead>
+                <tr>
+                  <th>מספר מזהה הזמנה</th>
+                  <th>תאריך</th>
+                  <th>סה"כ</th>
+                  <th>שולם</th>
+                  <th>נשלח</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-        )}
-      </Col>
-    </Row>
+              </thead>
+              <tbody>
+                {orders.map((order) => (
+                  <tr key={order._id}>
+                    <td>{order._id}</td>
+                    <td>{order.createdAt.substring(0, 10)}</td>
+                    <td>{order.totalPrice}</td>
+                    <td>
+                      {order.isPaid ? (
+                        order.paidAt.substring(0, 10)
+                      ) : (
+                        <i
+                          className="fas fa-times"
+                          style={{ color: "red" }}
+                        ></i>
+                      )}
+                    </td>
+                    <td>
+                      {order.isDelivered ? (
+                        order.deliveredAt.substring(0, 10)
+                      ) : (
+                        <i
+                          className="fas fa-times"
+                          style={{ color: "red" }}
+                        ></i>
+                      )}
+                    </td>
+                    <td>
+                      <LinkContainer to={`/order/${order._id}`}>
+                        <Button className="btn-sm" variant="light">
+                          פרטים
+                        </Button>
+                      </LinkContainer>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          )}
+        </Col>
+      </Row>
+    </Fade>
   );
 };
 

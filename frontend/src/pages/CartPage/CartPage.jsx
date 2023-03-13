@@ -13,6 +13,7 @@ import {
 import { addToCart, removeFromCart } from "../../actions/cartActions";
 import "./cartPage.css";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 
 const CartPage = ({ match, location, history }) => {
   window.scrollTo(0, 0);
@@ -38,89 +39,92 @@ const CartPage = ({ match, location, history }) => {
   };
 
   return (
-    <Row>
-      <Col md={8}>
-        <h1 className="cart-title text-center">עגלת מוצרים</h1>
-        {cartItems.length === 0 ? (
-          <span className="cart-is-empty mt-5">
-            עגלת הקניות ריקה, &nbsp;
-            <Link to="/store">למעבר לחנות לחץ/י כאן</Link>
-          </span>
-        ) : (
-          <ListGroup variant="flush">
-            {cartItems.map((item) => (
-              <ListGroup.Item key={item.product}>
-                <Row>
-                  <Col md={2}>
-                    <Image src={item.image} alt={item.name} fluid rounded />
-                  </Col>
-                  <Col md={3}>
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
-                  </Col>
-                  <Col md={2}>₪{item.price}</Col>
-                  <Col md={2}>
-                    {" "}
-                    <Form.Control
-                      as="select"
-                      value={item.qty}
-                      onChange={(e) =>
-                        dispatch(
-                          addToCart(item.product, Number(e.target.value))
-                        )
-                      }
-                      className="qty-btn"
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </Form.Control>
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      type="button"
-                      variant="light"
-                      onClick={() => removeFromCartHandler(item.product)}
-                      className="remove-from-cart-btn"
-                    >
-                      <i className="fas fa-trash"></i>
-                    </Button>
-                  </Col>
-                </Row>
+    <Fade bottom>
+      <Row>
+        <Col md={8}>
+          <h1 className="cart-title text-center">עגלת מוצרים</h1>
+          {cartItems.length === 0 ? (
+            <span className="cart-is-empty mt-5">
+              עגלת הקניות ריקה, &nbsp;
+              <Link to="/store">למעבר לחנות לחץ/י כאן</Link>
+            </span>
+          ) : (
+            <ListGroup variant="flush">
+              {cartItems.map((item) => (
+                <ListGroup.Item key={item.product}>
+                  <Row>
+                    <Col md={2}>
+                      <Image src={item.image} alt={item.name} fluid rounded />
+                    </Col>
+                    <Col md={3}>
+                      <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    </Col>
+                    <Col md={2}>₪{item.price}</Col>
+                    <Col md={2}>
+                      {" "}
+                      <Form.Control
+                        as="select"
+                        value={item.qty}
+                        onChange={(e) =>
+                          dispatch(
+                            addToCart(item.product, Number(e.target.value))
+                          )
+                        }
+                        className="qty-btn"
+                      >
+                        {[...Array(item.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </Form.Control>
+                    </Col>
+                    <Col md={2}>
+                      <Button
+                        type="button"
+                        variant="light"
+                        onClick={() => removeFromCartHandler(item.product)}
+                        className="remove-from-cart-btn"
+                      >
+                        <i className="fas fa-trash"></i>
+                      </Button>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )}
+        </Col>
+        <Col md={4} className="overall">
+          <Card>
+            <ListGroup variant="flush">
+              <ListGroup.Item>
+                <h3 className="text-center">
+                  סה"כ {cartItems.reduce((acc, item) => acc + item.qty, 0)}{" "}
+                  מוצרים
+                </h3>
+                <span className="overall-price">
+                  ₪
+                  {cartItems
+                    .reduce((acc, item) => acc + item.qty * item.price, 0)
+                    .toFixed(2)}
+                </span>
               </ListGroup.Item>
-            ))}
-          </ListGroup>
-        )}
-      </Col>
-      <Col md={4} className="overall">
-        <Card>
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <h3 className="text-center">
-                סה"כ {cartItems.reduce((acc, item) => acc + item.qty, 0)} מוצרים
-              </h3>
-              <span className="overall-price">
-                ₪
-                {cartItems
-                  .reduce((acc, item) => acc + item.qty * item.price, 0)
-                  .toFixed(2)}
-              </span>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Button
-                type="button"
-                className="btn-block text-center"
-                disabled={cartItems.length === 0}
-                onClick={checkoutHandler}
-              >
-                המשך לתשלום
-              </Button>
-            </ListGroup.Item>
-          </ListGroup>
-        </Card>
-      </Col>
-    </Row>
+              <ListGroup.Item>
+                <Button
+                  type="button"
+                  className="btn-block text-center"
+                  disabled={cartItems.length === 0}
+                  onClick={checkoutHandler}
+                >
+                  המשך לתשלום
+                </Button>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        </Col>
+      </Row>
+    </Fade>
   );
 };
 

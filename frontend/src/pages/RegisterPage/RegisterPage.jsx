@@ -10,6 +10,7 @@ import registerSchema from "../../validation/register.validation";
 import validate from "../../validation/validation";
 import { toast } from "react-hot-toast";
 import PasswordRequirements from "../../components/PasswordRequirements/PasswordRequirements";
+import Fade from "react-reveal/Fade";
 import "./registerPage.css";
 
 const RegisterPage = ({ location, history }) => {
@@ -123,89 +124,91 @@ const RegisterPage = ({ location, history }) => {
   };
 
   return (
-    <FormContainer>
-      <h1 className="text-center">הרשמה</h1>
-      {/* {message && <Message variant="danger">{message}</Message>} */}
-      {error && <Message variant="danger">{error}</Message>}
-      {loading && <Loader />}
-      <Form onSubmit={submitHandler}>
-        <Form.Group controlId="name">
-          <Form.Label className="text-center">שם</Form.Label>
-          <Form.Control
-            type="name"
-            placeholder="ישראל ישראלי"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+    <Fade bottom>
+      <FormContainer>
+        <h1 className="text-center">הרשמה</h1>
+        {/* {message && <Message variant="danger">{message}</Message>} */}
+        {error && <Message variant="danger">{error}</Message>}
+        {loading && <Loader />}
+        <Form onSubmit={submitHandler}>
+          <Form.Group controlId="name">
+            <Form.Label className="text-center">שם</Form.Label>
+            <Form.Control
+              type="name"
+              placeholder="ישראל ישראלי"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Form.Group controlId="email">
-          <Form.Label>אימייל</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="example@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onInput={emailValidation}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="email">
+            <Form.Label>אימייל</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="example@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onInput={emailValidation}
+            ></Form.Control>
+          </Form.Group>
 
-        <p className="email-validation mt-2">
-          &nbsp;
-          {message}
-        </p>
+          <p className="email-validation mt-2">
+            &nbsp;
+            {message}
+          </p>
 
-        <Form.Group controlId="password">
-          <Form.Label>סיסמא</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="סיסמא"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onInput={handlePasswordStr}
-            onFocus={handleOnFocus}
-            onBlur={handleOnBlur}
-            onKeyUp={handleOnKeyUp}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="password">
+            <Form.Label>סיסמא</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="סיסמא"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onInput={handlePasswordStr}
+              onFocus={handleOnFocus}
+              onBlur={handleOnBlur}
+              onKeyUp={handleOnKeyUp}
+            ></Form.Control>
+          </Form.Group>
 
-        {pwdRequest ? (
-          <PasswordRequirements
-            capsLetterFlag={checks.capsLetterCheck ? "valid" : "invalid"}
-            numberFlag={checks.numberCheck ? "valid" : "invalid"}
-            pwdLengthFlag={checks.pwdLengthCheck ? "valid" : "invalid"}
-            specialCharFlag={checks.specialCharCheck ? "valid" : "invalid"}
-          />
-        ) : null}
+          {pwdRequest ? (
+            <PasswordRequirements
+              capsLetterFlag={checks.capsLetterCheck ? "valid" : "invalid"}
+              numberFlag={checks.numberCheck ? "valid" : "invalid"}
+              pwdLengthFlag={checks.pwdLengthCheck ? "valid" : "invalid"}
+              specialCharFlag={checks.specialCharCheck ? "valid" : "invalid"}
+            />
+          ) : null}
 
-        <Form.Group controlId="confirmPassword">
-          <Form.Label>אישור סיסמא</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="אישור סיסמא"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
+          <Form.Group controlId="confirmPassword">
+            <Form.Label>אישור סיסמא</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="אישור סיסמא"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            ></Form.Control>
+          </Form.Group>
 
-        <Button
-          type="submit"
-          variant="primary"
-          className="mt-4 w-100 text-center"
-        >
-          הרשמה
-        </Button>
-      </Form>
+          <Button
+            type="submit"
+            variant="primary"
+            className="mt-4 w-100 text-center"
+          >
+            הרשמה
+          </Button>
+        </Form>
 
-      <Row className="py-3">
-        <Col className="text-center">
-          משתמש קיים? &nbsp;
-          <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>
-            לחץ כאן
-          </Link>
-        </Col>
-      </Row>
-    </FormContainer>
+        <Row className="py-3">
+          <Col className="text-center">
+            משתמש קיים? &nbsp;
+            <Link to={redirect ? `/login?redirect=${redirect}` : `/login`}>
+              לחץ כאן
+            </Link>
+          </Col>
+        </Row>
+      </FormContainer>
+    </Fade>
   );
 };
 

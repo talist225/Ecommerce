@@ -5,6 +5,7 @@ import FormContainer from "../../components/FormContainer/FormContainer";
 import { savePaymentMethod } from "../../actions/cartActions";
 import CheckoutSteps from "../../components/CheckoutSteps/CheckoutSteps";
 import { toast } from "react-hot-toast";
+import Fade from "react-reveal/Fade";
 import "./paymentPage.css";
 
 const PaymentPage = ({ history }) => {
@@ -28,27 +29,28 @@ const PaymentPage = ({ history }) => {
   };
 
   return (
-    <div className="payment">
-      <FormContainer>
-        <CheckoutSteps step1 step2 step3 />
-        <h2 className="w-100">אמצעי תשלום</h2>
-        <Form onSubmit={submitHandler} className="w-100">
-          <Form.Group>
-            <Form.Label as="legend">בחר/י אמצעי תשלום</Form.Label>
+    <Fade bottom>
+      <div className="payment">
+        <FormContainer>
+          <CheckoutSteps step1 step2 step3 />
+          <h2 className="w-100">אמצעי תשלום</h2>
+          <Form onSubmit={submitHandler} className="w-100">
+            <Form.Group>
+              <Form.Label as="legend">בחר/י אמצעי תשלום</Form.Label>
 
-            <Col>
-              <Form.Check
-                type="radio"
-                id="PayPal"
-                name="paymentMethod"
-                value="PayPal"
-                checked
-                onChange={(e) => setPaymentMethod(e.target.value)}
-              ></Form.Check>
-              <label className="ml-5">
-                &nbsp;&nbsp;&nbsp;&nbsp;אשראי או PayPal{" "}
-              </label>
-              {/* 
+              <Col>
+                <Form.Check
+                  type="radio"
+                  id="PayPal"
+                  name="paymentMethod"
+                  value="PayPal"
+                  checked
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                ></Form.Check>
+                <label className="ml-5">
+                  &nbsp;&nbsp;&nbsp;&nbsp;אשראי או PayPal{" "}
+                </label>
+                {/* 
             //! Another payment method in the future
             <Form.Check
               type="radio"
@@ -58,15 +60,16 @@ const PaymentPage = ({ history }) => {
               value="BIT"
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check> */}
-            </Col>
-          </Form.Group>
+              </Col>
+            </Form.Group>
 
-          <Button type="submit" variant="primary" className="mt-4">
-            המשך לתשלום
-          </Button>
-        </Form>
-      </FormContainer>
-    </div>
+            <Button type="submit" variant="primary" className="mt-4">
+              המשך לתשלום
+            </Button>
+          </Form>
+        </FormContainer>
+      </div>
+    </Fade>
   );
 };
 
